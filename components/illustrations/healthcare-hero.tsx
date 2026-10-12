@@ -6,165 +6,291 @@ export function HealthcareHeroIllustration({
   return (
     <div className={className}>
       <svg
-        viewBox="0 0 560 480"
+        viewBox="0 0 560 500"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
         className="h-auto w-full"
         role="img"
-        aria-label="Healthcare revenue cycle management illustration showing medical billing dashboards and care teams"
+        aria-label="Medical billing dashboard showing a claims queue, posted payments, and days in accounts receivable"
       >
         <defs>
-          <linearGradient id="hg1" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0%" stopColor="#1E88E5" stopOpacity="0.2" />
-            <stop offset="100%" stopColor="#2EC4B6" stopOpacity="0.25" />
+          <linearGradient id="billBars" x1="0" y1="1" x2="0" y2="0">
+            <stop offset="0%" stopColor="#16324F" />
+            <stop offset="100%" stopColor="#1F6B4A" />
           </linearGradient>
-          <linearGradient id="hg2" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stopColor="#0F4C81" />
-            <stop offset="100%" stopColor="#1E88E5" />
-          </linearGradient>
-          <filter id="soft" x="-20%" y="-20%" width="140%" height="140%">
+          <filter id="billSoft" x="-20%" y="-20%" width="140%" height="140%">
             <feDropShadow
               dx="0"
-              dy="18"
-              stdDeviation="18"
-              floodColor="#0F4C81"
-              floodOpacity="0.12"
+              dy="16"
+              stdDeviation="16"
+              floodColor="#16324F"
+              floodOpacity="0.14"
             />
           </filter>
         </defs>
 
-        <circle cx="280" cy="240" r="210" fill="url(#hg1)" />
-        <circle cx="420" cy="110" r="48" fill="#2EC4B6" fillOpacity="0.18" />
-        <circle cx="120" cy="360" r="36" fill="#1E88E5" fillOpacity="0.16" />
+        <circle cx="300" cy="250" r="210" fill="#16324F" fillOpacity="0.05" />
+        <circle cx="450" cy="88" r="42" fill="#1F6B4A" fillOpacity="0.12" />
+        <circle cx="96" cy="400" r="34" fill="#8C6A32" fillOpacity="0.14" />
 
-        <g filter="url(#soft)">
+        <g filter="url(#billSoft)">
           <rect
-            x="86"
-            y="96"
-            width="300"
-            height="220"
+            x="78"
+            y="78"
+            width="318"
+            height="332"
+            rx="32"
+            fill="white"
+            stroke="#E6E0D4"
+          />
+          <text
+            x="102"
+            y="116"
+            fill="#16324F"
+            fontSize="16"
+            fontFamily="Georgia, serif"
+            fontWeight="600"
+          >
+            Claims queue
+          </text>
+          <text
+            x="102"
+            y="138"
+            fill="#44403C"
+            fontSize="11"
+            fontFamily="system-ui, sans-serif"
+          >
+            This week · 42 claims
+          </text>
+
+          <rect x="102" y="160" width="270" height="36" rx="8" fill="#F7F4EE" />
+          <circle cx="122" cy="178" r="5" fill="#1F6B4A" />
+          <text
+            x="136"
+            y="182"
+            fill="#1C1917"
+            fontSize="12"
+            fontFamily="system-ui, sans-serif"
+            fontWeight="600"
+          >
+            #10482
+          </text>
+          <text
+            x="196"
+            y="182"
+            fill="#1F6B4A"
+            fontSize="12"
+            fontFamily="system-ui, sans-serif"
+            fontWeight="600"
+          >
+            Paid
+          </text>
+          <text
+            x="312"
+            y="182"
+            fill="#16324F"
+            fontSize="12"
+            fontFamily="Georgia, serif"
+          >
+            $1,240
+          </text>
+
+          <rect x="102" y="204" width="270" height="36" rx="8" fill="#F7F4EE" />
+          <circle cx="122" cy="222" r="5" fill="#8C6A32" className="hero-pulse" />
+          <text
+            x="136"
+            y="226"
+            fill="#1C1917"
+            fontSize="12"
+            fontFamily="system-ui, sans-serif"
+            fontWeight="600"
+          >
+            #10491
+          </text>
+          <text
+            x="196"
+            y="226"
+            fill="#8C6A32"
+            fontSize="12"
+            fontFamily="system-ui, sans-serif"
+            fontWeight="600"
+          >
+            In review
+          </text>
+          <text
+            x="322"
+            y="226"
+            fill="#16324F"
+            fontSize="12"
+            fontFamily="Georgia, serif"
+          >
+            $860
+          </text>
+
+          <rect x="102" y="248" width="270" height="36" rx="8" fill="#F7F4EE" />
+          <circle cx="122" cy="266" r="5" fill="#16324F" />
+          <text
+            x="136"
+            y="270"
+            fill="#1C1917"
+            fontSize="12"
+            fontFamily="system-ui, sans-serif"
+            fontWeight="600"
+          >
+            #10503
+          </text>
+          <text
+            x="196"
+            y="270"
+            fill="#16324F"
+            fontSize="12"
+            fontFamily="system-ui, sans-serif"
+            fontWeight="600"
+          >
+            Appealed
+          </text>
+          <text
+            x="322"
+            y="270"
+            fill="#16324F"
+            fontSize="12"
+            fontFamily="Georgia, serif"
+          >
+            $420
+          </text>
+
+          <text
+            x="102"
+            y="312"
+            fill="#44403C"
+            fontSize="11"
+            fontFamily="system-ui, sans-serif"
+          >
+            Collections, last 4 weeks
+          </text>
+          <g>
+            <rect
+              className="hero-bar"
+              x="112"
+              y="356"
+              width="36"
+              height="28"
+              rx="4"
+              fill="url(#billBars)"
+            />
+            <rect
+              className="hero-bar hero-bar-2"
+              x="168"
+              y="340"
+              width="36"
+              height="44"
+              rx="4"
+              fill="url(#billBars)"
+            />
+            <rect
+              className="hero-bar hero-bar-3"
+              x="224"
+              y="328"
+              width="36"
+              height="56"
+              rx="4"
+              fill="url(#billBars)"
+            />
+            <rect
+              className="hero-bar hero-bar-4"
+              x="280"
+              y="316"
+              width="36"
+              height="68"
+              rx="4"
+              fill="#1F6B4A"
+            />
+          </g>
+        </g>
+
+        <g className="animate-float">
+          <rect
+            x="348"
+            y="46"
+            width="176"
+            height="132"
             rx="28"
             fill="white"
-            stroke="#E5E7EB"
+            stroke="#E6E0D4"
           />
-          <rect x="112" y="128" width="120" height="14" rx="7" fill="#0F4C81" />
-          <rect
-            x="112"
-            y="156"
-            width="180"
-            height="10"
-            rx="5"
-            fill="#E5E7EB"
-          />
-          <rect
-            x="112"
-            y="178"
-            width="150"
-            height="10"
-            rx="5"
-            fill="#E5E7EB"
-          />
-          <rect x="112" y="220" width="72" height="56" rx="16" fill="#EAF6FF" />
-          <rect x="196" y="220" width="72" height="56" rx="16" fill="#E8FBF8" />
-          <rect x="280" y="220" width="72" height="56" rx="16" fill="#EEF2FF" />
-          <text
-            x="128"
-            y="254"
-            fill="#0F4C81"
-            fontSize="16"
-            fontFamily="system-ui,sans-serif"
-            fontWeight="700"
-          >
-            98%
-          </text>
-          <text
-            x="212"
-            y="254"
-            fill="#0F4C81"
-            fontSize="16"
-            fontFamily="system-ui,sans-serif"
-            fontWeight="700"
-          >
-            +28%
-          </text>
-          <text
-            x="296"
-            y="254"
-            fill="#0F4C81"
-            fontSize="16"
-            fontFamily="system-ui,sans-serif"
-            fontWeight="700"
-          >
-            -40%
-          </text>
-        </g>
-
-        <g className="animate-float" filter="url(#soft)">
-          <rect
-            x="318"
-            y="250"
-            width="180"
-            height="130"
-            rx="24"
-            fill="white"
-            stroke="#E5E7EB"
-          />
-          <circle cx="352" cy="292" r="18" fill="url(#hg2)" />
+          <circle cx="384" cy="92" r="16" fill="#1F6B4A" />
           <path
-            d="M352 283v18M343 292h18"
+            d="M376 92l6 6 11-12"
             stroke="white"
-            strokeWidth="2.5"
+            strokeWidth="2.4"
             strokeLinecap="round"
-          />
-          <rect
-            x="384"
-            y="280"
-            width="90"
-            height="10"
-            rx="5"
-            fill="#0F4C81"
-          />
-          <rect
-            x="384"
-            y="300"
-            width="70"
-            height="8"
-            rx="4"
-            fill="#E5E7EB"
-          />
-          <rect
-            x="338"
-            y="330"
-            width="140"
-            height="28"
-            rx="14"
-            fill="#2EC4B6"
+            strokeLinejoin="round"
           />
           <text
-            x="364"
-            y="349"
-            fill="white"
+            x="410"
+            y="88"
+            fill="#44403C"
             fontSize="11"
-            fontFamily="system-ui,sans-serif"
-            fontWeight="700"
+            fontFamily="system-ui, sans-serif"
           >
-            Claim Approved
+            Posted today
+          </text>
+          <text
+            x="410"
+            y="110"
+            fill="#16324F"
+            fontSize="20"
+            fontFamily="Georgia, serif"
+          >
+            $4,280
+          </text>
+          <text
+            x="372"
+            y="150"
+            fill="#1F6B4A"
+            fontSize="11"
+            fontFamily="system-ui, sans-serif"
+            fontWeight="600"
+          >
+            EOB matched to claim
           </text>
         </g>
 
-        <g className="animate-float-delayed" filter="url(#soft)">
+        <g className="animate-float-delayed">
           <rect
-            x="70"
-            y="300"
-            width="160"
-            height="92"
-            rx="22"
+            x="40"
+            y="318"
+            width="168"
+            height="112"
+            rx="28"
             fill="white"
-            stroke="#E5E7EB"
+            stroke="#E6E0D4"
           />
-          <rect x="92" y="324" width="48" height="8" rx="4" fill="#1E88E5" />
-          <rect x="92" y="344" width="116" height="6" rx="3" fill="#E5E7EB" />
-          <rect x="92" y="360" width="90" height="6" rx="3" fill="#E5E7EB" />
+          <text
+            x="60"
+            y="348"
+            fill="#44403C"
+            fontSize="11"
+            fontFamily="system-ui, sans-serif"
+          >
+            Days in A/R
+          </text>
+          <text
+            x="60"
+            y="386"
+            fill="#16324F"
+            fontSize="28"
+            fontFamily="Georgia, serif"
+          >
+            28
+          </text>
+          <path
+            d="M118 392l18-14 16 8 22-20"
+            stroke="#1F6B4A"
+            strokeWidth="2.2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
         </g>
       </svg>
     </div>

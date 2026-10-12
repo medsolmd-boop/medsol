@@ -18,9 +18,9 @@ import { Container } from "@/components/ui/container";
 import { FadeIn } from "@/components/motion/fade-in";
 import {
   ClipboardCheck,
-  MapPinned,
+  FileCheck2,
+  Landmark,
   ShieldCheck,
-  Stethoscope,
 } from "lucide-react";
 
 export const metadata = buildMetadata({
@@ -46,87 +46,58 @@ export default function HomePage() {
         secondaryCta={homeContent.hero.secondaryCta}
         secondaryHref="/medical-billing"
       >
-        <div className="relative">
-          <HealthcareHeroIllustration />
-          <div className="glass-strong absolute -left-2 bottom-8 hidden rounded-2xl px-4 py-3 md:block">
-            <p className="text-xs font-semibold uppercase tracking-wider text-muted">
-              Clean Claim Rate
-            </p>
-            <p className="text-2xl font-bold text-primary">98%</p>
-          </div>
-          <div className="glass-strong absolute -right-2 top-10 hidden rounded-2xl px-4 py-3 md:block">
-            <p className="text-xs font-semibold uppercase tracking-wider text-muted">
-              Collection Lift
-            </p>
-            <p className="text-2xl font-bold text-accent">+28%</p>
-          </div>
-        </div>
+        <HealthcareHeroIllustration />
       </PageHero>
 
-      <section className="section-surface border-b py-7 md:py-8">
+      <section className="border-b border-border bg-white">
         <Container>
-          <FadeIn>
-            <div className="flex flex-wrap items-center justify-center gap-3 md:gap-4">
-              {[
-                {
-                  label: "HIPAA-aware workflows",
-                  icon: ShieldCheck,
-                  tone: "text-accent bg-accent/10 group-hover:bg-accent group-hover:shadow-[0_6px_16px_rgba(42,212,196,0.35)]",
-                },
-                {
-                  label: "Transparent reporting",
-                  icon: ClipboardCheck,
-                  tone: "text-secondary bg-secondary/10 group-hover:bg-secondary group-hover:shadow-[0_6px_16px_rgba(74,168,255,0.35)]",
-                },
-                {
-                  label: "Specialty-aware specialists",
-                  icon: Stethoscope,
-                  tone: "text-primary bg-primary/10 group-hover:bg-primary group-hover:shadow-[0_6px_16px_rgba(15,76,129,0.3)]",
-                },
-                {
-                  label: "US-focused RCM support",
-                  icon: MapPinned,
-                  tone: "text-spark bg-spark/15 group-hover:bg-spark group-hover:shadow-[0_6px_16px_rgba(243,193,75,0.4)]",
-                },
-              ].map((item) => (
-                <div
-                  key={item.label}
-                  className="group relative inline-flex cursor-default items-center gap-2.5 rounded-full border border-white/70 bg-[linear-gradient(165deg,rgba(255,255,255,0.72),rgba(232,244,251,0.58))] px-4 py-2.5 text-sm font-medium text-muted shadow-[0_4px_16px_rgba(15,76,129,0.04),inset_0_-12px_20px_rgba(15,76,129,0.04)] backdrop-blur-sm transition-all duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-1 hover:border-accent/30 hover:bg-white hover:text-primary hover:shadow-[0_12px_28px_rgba(42,212,196,0.18)]"
-                >
-                  <span
-                    className={`relative flex h-8 w-8 shrink-0 items-center justify-center rounded-full transition-all duration-300 group-hover:scale-110 group-hover:text-white ${item.tone}`}
-                  >
-                    <item.icon
-                      className="relative z-[1] h-4 w-4 transition-transform duration-300 group-hover:rotate-[-8deg]"
-                      aria-hidden="true"
-                    />
-                    <span
-                      className="pointer-events-none absolute inset-0 rounded-full bg-accent/30 opacity-0 group-hover:animate-ping group-hover:opacity-50"
-                      aria-hidden="true"
-                    />
-                  </span>
-                  <span className="transition-colors duration-300">{item.label}</span>
-                </div>
-              ))}
-            </div>
-          </FadeIn>
+          <ul className="grid grid-cols-2 gap-x-8 gap-y-5 py-6 md:grid-cols-4 md:py-7">
+            {[
+              { label: "HIPAA-aware workflows", icon: ShieldCheck },
+              { label: "Claim-level reporting", icon: ClipboardCheck },
+              { label: "Denial follow-up", icon: FileCheck2 },
+              { label: "US payer billing", icon: Landmark },
+            ].map((item) => (
+              <li key={item.label} className="flex items-center gap-3">
+                <item.icon
+                  className="h-4 w-4 shrink-0 text-secondary"
+                  aria-hidden="true"
+                />
+                <span className="text-sm font-semibold leading-snug text-foreground">
+                  {item.label}
+                </span>
+              </li>
+            ))}
+          </ul>
         </Container>
       </section>
 
-      <section className="py-16 md:py-20">
+      <section className="py-16 md:py-24">
         <Container>
-          <FadeIn className="mx-auto max-w-3xl text-center">
-            <p className="text-base leading-relaxed text-muted md:text-lg">
-              {homeContent.intro}
-            </p>
-          </FadeIn>
+          <div className="grid items-start gap-8 lg:grid-cols-12 lg:gap-14">
+            <FadeIn className="lg:col-span-5">
+              <p className="text-sm font-semibold uppercase tracking-[0.18em] text-secondary">
+                The revenue cycle
+              </p>
+              <h2 className="mt-3 text-3xl leading-[1.15] text-foreground md:text-4xl">
+                Collections, denials, and days in A/R. That is the job.
+              </h2>
+            </FadeIn>
+            <FadeIn
+              delay={0.08}
+              className="space-y-5 text-[1.0625rem] leading-[1.75] text-foreground/80 lg:col-span-7"
+            >
+              <p>{homeContent.intro}</p>
+              <p>{homeContent.introDetail}</p>
+            </FadeIn>
+          </div>
         </Container>
       </section>
 
       <div id="services">
         <ServiceCards
           title="Our Core Services"
-          description="End-to-end medical billing services, credentialing, and virtual front desk support designed for modern healthcare practices."
+          description="Claim submission, payer enrollment, and front-desk support for practices that want the revenue cycle handled like a finance function."
           services={homeContent.services}
         />
       </div>
@@ -139,7 +110,7 @@ export default function HomePage() {
       <BenefitGrid
         eyebrow="Why Choose Us"
         title={homeContent.whyChoose.title}
-        description="Healthcare providers choose a revenue cycle management company that increases collections while reducing administrative burden."
+        description="Practices hire a billing company when in-house follow-up cannot keep denials from aging and collections from slipping."
         items={homeContent.whyChoose.items}
       />
 
@@ -156,7 +127,7 @@ export default function HomePage() {
       <Timeline
         eyebrow="How We Work"
         title="How We Work"
-        description="A clear path from discovery to optimized collections, built for busy healthcare operators."
+        description="A clear path from the first claim audit to a billing desk that reports collections every month."
         steps={homeContent.howWeWork}
       />
 
@@ -164,7 +135,7 @@ export default function HomePage() {
 
       <CtaBanner
         title="Get a Free Revenue Cycle Assessment"
-        description="See how outsourcing medical billing and streamlining credentialing can increase collections and free your team for patient care."
+        description="See where claims are stalling, which denials repeat, and what a dedicated billing team would change in the first quarter."
         cta={homeContent.hero.primaryCta}
       />
 

@@ -31,26 +31,25 @@ export function SectionTitle({
       )}
     >
       {eyebrow ? (
-        <div className={cn("mb-3", align === "center" && "flex justify-center")}>
-          <p className="inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-[0.18em] text-secondary">
-            <span
-              className="h-1.5 w-1.5 rounded-full bg-gradient-to-br from-accent to-spark shadow-[0_0_10px_rgba(42,212,196,0.7)]"
-              aria-hidden="true"
-            />
-            {eyebrow}
-          </p>
-        </div>
+        <p className="mb-3 text-sm font-semibold uppercase tracking-[0.18em] text-secondary">
+          {eyebrow}
+        </p>
       ) : null}
       <Heading
         className={cn(
-          "text-balance text-3xl font-bold tracking-tight text-foreground md:text-4xl lg:text-[2.75rem] lg:leading-[1.15]",
+          "text-balance text-3xl leading-[1.15] text-foreground md:text-4xl",
           titleClassName
         )}
       >
         {title}
       </Heading>
       {description ? (
-        <p className="mt-4 text-base leading-relaxed text-muted md:text-lg">
+        <p
+          className={cn(
+            "mt-4 max-w-[42rem] text-[1.0625rem] leading-[1.75] text-foreground/80",
+            align === "center" && "mx-auto"
+          )}
+        >
           {description}
         </p>
       ) : null}

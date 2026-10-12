@@ -75,8 +75,8 @@ function canHover() {
 export function AccordionGallery({
   items = DEFAULT_ITEMS,
   defaultIndex = 2,
-  accentColor = "#2ec4b6",
-  overlayColor = "#0a365c",
+  accentColor = "#1f6b4a",
+  overlayColor = "#0e2236",
   textColor = "#ffffff",
   height = 460,
   gap = 10,
@@ -156,11 +156,15 @@ export function AccordionGallery({
           // Mobile/tablet: height-driven expand, no 3D tilt
           gsap.set(panel, { flexGrow: 1, rotateX: 0, rotateY: 0, clearProps: "transform" });
         } else {
-          const rot = isActive ? 0 : i < active ? tilt : -tilt;
-          const rotProp = vertical ? { rotateX: -rot } : { rotateY: rot };
           tl.to(
             panel,
-            { flexGrow: isActive ? grow : 1, ...rotProp, duration: dur, ease },
+            {
+              flexGrow: isActive ? grow : 1,
+              rotateX: 0,
+              rotateY: 0,
+              duration: dur,
+              ease,
+            },
             0
           );
         }
@@ -168,13 +172,12 @@ export function AccordionGallery({
         if (media) {
           const gray = grayscale ? (isActive ? 0 : 1) : 0;
           const dim = isActive ? 0 : 0.35;
+          gsap.set(media, { "--ag-gray": gray, "--ag-dim": dim });
           if (touchLayout) {
             gsap.set(media, {
               x: 0,
               y: 0,
               scale: isActive ? 1.04 : 1,
-              "--ag-gray": gray,
-              "--ag-dim": dim,
             });
           } else {
             const drift = Math.max(-1.5, Math.min(1.5, active - i));
@@ -184,9 +187,7 @@ export function AccordionGallery({
               {
                 x: isActive ? 0 : shift,
                 y: 0,
-                scale: isActive ? 1.06 : 1.02,
-                "--ag-gray": gray,
-                "--ag-dim": dim,
+                scale: isActive ? 1.04 : 1,
                 duration: dur,
                 ease,
               },

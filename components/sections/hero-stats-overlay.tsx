@@ -24,7 +24,7 @@ function StatCard({
 }) {
   return (
     <div
-      className={`glass-strong rounded-2xl px-3.5 py-2.5 ${className ?? ""}`}
+      className={`rounded-3xl border border-border bg-white px-3.5 py-2.5 shadow-[0_10px_24px_rgba(22,50,79,0.08)] ${className ?? ""}`}
     >
       <p className="text-[10px] font-semibold uppercase tracking-[0.12em] text-muted">
         {stat.label}
@@ -53,16 +53,16 @@ export function HeroStatsOverlay({ children, stats }: HeroStatsOverlayProps) {
       <div className="pointer-events-none absolute inset-0 hidden md:block">
         <StatCard
           stat={one}
-          className="pointer-events-auto absolute -top-4 right-3 w-[150px] lg:-top-5 lg:right-0"
+          className="animate-float pointer-events-auto absolute -top-4 right-3 w-[150px] lg:-top-5 lg:right-0"
         />
         <StatCard
           stat={two}
-          className="pointer-events-auto absolute -bottom-4 left-3 w-[150px] lg:-bottom-5 lg:left-0"
+          className="animate-float-delayed pointer-events-auto absolute -bottom-4 left-3 w-[150px] lg:-bottom-5 lg:left-0"
         />
         {three ? (
           <StatCard
             stat={three}
-            className="pointer-events-auto absolute bottom-[28%] -right-3 w-[150px] lg:-right-4"
+            className="animate-float pointer-events-auto absolute bottom-[28%] -right-3 w-[150px] [animation-delay:0.7s] lg:-right-4"
           />
         ) : null}
       </div>
@@ -72,7 +72,7 @@ export function HeroStatsOverlay({ children, stats }: HeroStatsOverlayProps) {
         {all.map((stat) => (
           <div
             key={stat.label}
-            className="glass rounded-2xl px-2 py-3 text-center"
+            className="rounded-3xl border border-border bg-white px-2 py-3 text-center"
           >
             <p className="text-[9px] font-semibold uppercase tracking-[0.1em] text-muted">
               {stat.label}

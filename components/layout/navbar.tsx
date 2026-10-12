@@ -1,13 +1,16 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
-import { ChevronDown, Menu, X, Cross } from "lucide-react";
+import { ChevronDown, Menu, X } from "lucide-react";
 import { navLinks, servicesMenuLinks, siteConfig } from "@/lib/site-config";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
+
+const LOGO_ASPECT = 289 / 206;
 
 function clamp(value: number, min = 0, max = 1) {
   return Math.min(max, Math.max(min, value));
@@ -32,7 +35,6 @@ export function Navbar() {
   const shellRef = useRef<HTMLDivElement>(null);
   const rowRef = useRef<HTMLDivElement>(null);
   const logoRef = useRef<HTMLSpanElement>(null);
-  const iconRef = useRef<SVGSVGElement>(null);
   const titleRef = useRef<HTMLSpanElement>(null);
   const ctaRef = useRef<HTMLAnchorElement>(null);
   const ctaFullRef = useRef<HTMLSpanElement>(null);
@@ -81,12 +83,7 @@ export function Navbar() {
     const apply = (progress: number) => {
       const header = headerRef.current;
       const shell = shellRef.current;
-      const row = rowRef.current;
-      const logo = logoRef.current;
-      const icon = iconRef.current;
-      const title = titleRef.current;
-      const cta = ctaRef.current;
-      if (!header || !shell || !row) return;
+      if (!header || !shell) return;
 
       const desktop = desktopRef.current;
       const menuOpen = openRef.current;
@@ -109,12 +106,6 @@ export function Navbar() {
         }
       }
 
-      const barHeight = 72 - p * (desktop ? 12 : 10);
-      const logoSize = 40 - p * 4;
-      const iconSize = 20 - p * 4;
-      const titleSize = 18 - p * 2.5;
-      const ctaHeight = 44 - p * 6;
-      const ctaPadX = 22 - p * 4;
       const showGlass = p > 0.02 || menuOpen;
 
       header.style.paddingLeft = `${padX}px`;
@@ -126,41 +117,22 @@ export function Navbar() {
       shell.style.paddingLeft = `${p * (desktop ? 10 : 6)}px`;
       shell.style.paddingRight = `${p * (desktop ? 10 : 6)}px`;
       shell.style.overflow = servicesOpen && desktop ? "visible" : "hidden";
-      shell.style.boxShadow = showGlass
-        ? `0 ${10 + p * 8}px ${28 + p * 14}px rgba(15,76,129,${0.06 + p * 0.08})`
-        : "none";
-      shell.style.borderColor = showGlass
-        ? `rgba(255,255,255,${0.55 + p * 0.2})`
-        : "transparent";
-      shell.style.background = showGlass
-        ? `radial-gradient(120% 90% at 0% 0%, rgba(74,168,255,${0.14 + p * 0.05}), transparent 54%), radial-gradient(90% 80% at 100% 100%, rgba(42,212,196,${0.11 + p * 0.04}), transparent 50%), linear-gradient(165deg, rgba(255,255,255,${0.7 + p * 0.12}), rgba(232,244,251,${0.64 + p * 0.12}))`
-        : "transparent";
-
       if (lastGlass !== showGlass) {
         lastGlass = showGlass;
         const blur = showGlass ? "blur(12px)" : "none";
         shell.style.backdropFilter = blur;
         shell.style.setProperty("-webkit-backdrop-filter", blur);
+        shell.style.boxShadow = showGlass
+          ? "0 16px 36px rgba(22,50,79,0.1)"
+          : "none";
+        shell.style.borderColor = showGlass
+          ? "rgba(255,252,247,0.8)"
+          : "transparent";
+        shell.style.background = showGlass
+          ? "rgba(255,252,247,0.92)"
+          : "transparent";
       }
 
-      row.style.height = `${barHeight}px`;
-
-      if (logo) {
-        logo.style.width = `${logoSize}px`;
-        logo.style.height = `${logoSize}px`;
-      }
-      if (icon) {
-        icon.style.width = `${iconSize}px`;
-        icon.style.height = `${iconSize}px`;
-      }
-      if (title) {
-        title.style.fontSize = `${titleSize}px`;
-      }
-      if (cta) {
-        cta.style.height = `${ctaHeight}px`;
-        cta.style.paddingLeft = `${ctaPadX}px`;
-        cta.style.paddingRight = `${ctaPadX}px`;
-      }
       if (ctaFullRef.current && ctaShortRef.current) {
         const fade = clamp((p - 0.42) / 0.28);
         ctaFullRef.current.style.opacity = String(1 - fade);
@@ -310,9 +282,17 @@ export function Navbar() {
           >
             <span
               ref={logoRef}
-              className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-primary via-secondary to-accent text-white shadow-[0_8px_20px_rgba(15,76,129,0.25)] transition-transform duration-300 group-hover:scale-105"
+              className="relative block h-9 shrink-0 transition-transform duration-300 group-hover:scale-105"
+              style={{ width: 36 * LOGO_ASPECT }}
             >
-              <Cross ref={iconRef} className="h-5 w-5" aria-hidden="true" />
+              <Image
+                src="/logo-mark.png"
+                alt=""
+                fill
+                sizes="60px"
+                className="object-contain object-left"
+                priority
+              />
             </span>
             <span
               ref={titleRef}

@@ -63,7 +63,12 @@ export function Timeline({
         <FadeIn className="mt-8 md:mt-10">
           {/* Desktop / tablet: hover-expand strip */}
           <div
-            className="hidden h-[240px] gap-3 md:flex lg:h-[260px]"
+            className="timeline-track hidden h-[280px] gap-4 md:grid"
+            style={{
+              gridTemplateColumns: steps
+                .map((_, index) => (index === active ? "2.35fr" : "1fr"))
+                .join(" "),
+            }}
             onMouseLeave={() => setActive(0)}
           >
             {steps.map((item, index) => {
@@ -80,79 +85,62 @@ export function Timeline({
                   onFocus={() => setActive(index)}
                   aria-expanded={isActive}
                   className={cn(
-                    "group relative h-full min-w-0 overflow-hidden rounded-[1.35rem] border text-left",
-                    "transition-[flex-grow,background-color,border-color,box-shadow,color] duration-500 ease-in-out",
+                    "relative h-full min-w-0 overflow-hidden rounded-[2rem] border text-left",
+                    "transition-[background-color,border-color,color] duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]",
                     isActive
-                      ? "grow-[2.4] border-primary bg-gradient-to-br from-primary via-[#135a96] to-secondary text-white shadow-[0_18px_40px_rgba(15,76,129,0.25)]"
-                      : "glass grow text-foreground"
+                      ? "border-primary bg-primary text-white"
+                      : "border-border bg-white text-foreground"
                   )}
                 >
-                  {/* Collapsed view */}
                   <div
                     className={cn(
-                      "absolute inset-0 z-[1] flex flex-col items-center justify-center gap-3 px-3 py-5 transition-opacity duration-300 ease-in-out",
-                      isActive
-                        ? "pointer-events-none opacity-0"
-                        : "opacity-100"
+                      "absolute inset-0 flex flex-col items-center justify-center gap-3 px-4 py-5 transition-opacity duration-300 ease-[cubic-bezier(0.22,1,0.36,1)]",
+                      isActive ? "pointer-events-none opacity-0" : "opacity-100"
                     )}
                   >
-                    <span className="flex h-11 w-11 items-center justify-center rounded-2xl bg-primary/8 text-primary">
+                    <span className="flex h-12 w-12 items-center justify-center rounded-full bg-primary/8 text-primary">
                       <Icon className="h-5 w-5" aria-hidden="true" />
                     </span>
                     <span className="text-xs font-bold tracking-[0.14em] text-secondary">
                       {label}
                     </span>
-                    <h3 className="px-1 text-center text-[15px] font-bold leading-snug text-foreground">
+                    <h3 className="px-1 text-center text-[15px] font-semibold leading-snug text-foreground">
                       {item.title}
                     </h3>
-                    <span className="glass mt-1 inline-flex h-9 w-9 items-center justify-center rounded-full text-muted">
+                    <span className="mt-1 inline-flex h-9 w-9 items-center justify-center rounded-full border border-border bg-[#f7f4ee] text-muted">
                       <ArrowRight className="h-4 w-4" aria-hidden="true" />
                     </span>
                   </div>
 
-                  {/* Expanded view */}
                   <div
                     className={cn(
-                      "absolute inset-0 z-[2] flex transition-opacity duration-300 ease-in-out",
+                      "absolute inset-0 flex flex-col justify-between p-6 transition-opacity duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] lg:p-7",
                       isActive
-                        ? "opacity-100 delay-75"
+                        ? "opacity-100 delay-150"
                         : "pointer-events-none opacity-0"
                     )}
                   >
-                    <div className="relative z-[1] flex h-full w-full flex-col justify-between p-6 lg:p-7">
-                      <div>
-                        <div className="flex items-center justify-between gap-3">
-                          <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-white/15 text-white">
-                            <Icon className="h-5 w-5" aria-hidden="true" />
-                          </span>
-                          <span className="shrink-0 rounded-full bg-white/15 px-3 py-1 text-xs font-semibold tracking-wide text-white/90">
-                            Step {label}
-                          </span>
-                        </div>
-
-                        <h3 className="mt-4 text-xl font-bold leading-snug text-white lg:text-2xl">
-                          {item.title}
-                        </h3>
-                        <p className="mt-2 max-w-xl text-sm leading-relaxed text-white/88 lg:text-[15px]">
-                          {item.description}
-                        </p>
-                      </div>
-
-                      <div className="mt-4 flex items-center">
-                        <span className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-white/30 bg-white text-primary">
-                          <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                    <div>
+                      <div className="flex items-center justify-between gap-3">
+                        <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-white/15 text-white">
+                          <Icon className="h-5 w-5" aria-hidden="true" />
+                        </span>
+                        <span className="shrink-0 rounded-full bg-white/15 px-3 py-1 text-xs font-semibold tracking-wide text-white/90">
+                          Step {label}
                         </span>
                       </div>
+
+                      <h3 className="mt-4 text-xl font-semibold leading-snug text-white lg:text-2xl">
+                        {item.title}
+                      </h3>
+                      <p className="mt-2 max-w-[46ch] text-[15px] leading-relaxed text-white/88">
+                        {item.description}
+                      </p>
                     </div>
 
-                    <div
-                      className="pointer-events-none absolute -right-4 -top-4 h-28 w-28 rounded-full bg-accent/20 blur-2xl"
-                      aria-hidden="true"
-                    />
-                    <div
-                      className="pointer-events-none absolute -bottom-8 right-8 h-24 w-24 rounded-full bg-white/10 blur-2xl"
-                      aria-hidden="true"
-                    />
+                    <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-white text-primary">
+                      <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                    </span>
                   </div>
                 </button>
               );
@@ -174,16 +162,16 @@ export function Timeline({
                   onClick={() => setActive(index)}
                   aria-expanded={isActive}
                   className={cn(
-                    "w-full rounded-[1.35rem] border p-4 text-left transition-[background-color,border-color,box-shadow,color] duration-500 ease-in-out",
+                    "w-full rounded-[1.75rem] border p-4 text-left transition-[background-color,border-color,color] duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]",
                     isActive
-                      ? "border-primary bg-gradient-to-br from-primary to-secondary text-white shadow-[0_16px_40px_rgba(15,76,129,0.25)]"
-                      : "glass text-foreground"
+                      ? "border-primary bg-primary text-white"
+                      : "border-border bg-white text-foreground"
                   )}
                 >
                   <div className="flex items-center gap-3">
                     <span
                       className={cn(
-                        "flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl transition-colors duration-500",
+                        "flex h-10 w-10 shrink-0 items-center justify-center rounded-full transition-colors duration-500",
                         isActive
                           ? "bg-white/15 text-white"
                           : "bg-primary/8 text-primary"
@@ -207,7 +195,7 @@ export function Timeline({
                         "flex h-9 w-9 shrink-0 items-center justify-center rounded-full border transition-colors duration-500",
                         isActive
                           ? "border-white/30 bg-white text-primary"
-                          : "glass text-muted"
+                          : "border-border bg-[#f7f4ee] text-muted"
                       )}
                     >
                       <ArrowRight className="h-4 w-4" aria-hidden="true" />
@@ -222,7 +210,7 @@ export function Timeline({
                     )}
                   >
                     <div className="overflow-hidden">
-                      <p className="text-sm leading-relaxed text-white/85">
+                      <p className="text-base leading-[1.7] text-white/85">
                         {item.description}
                       </p>
                     </div>

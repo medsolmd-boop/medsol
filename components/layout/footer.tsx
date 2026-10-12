@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { Cross, Mail, MapPin, Phone } from "lucide-react";
+import Image from "next/image";
+import { Mail, MapPin, Phone } from "lucide-react";
 import { navLinks, serviceLinks, siteConfig } from "@/lib/site-config";
 import { Container } from "@/components/ui/container";
 import { NewsletterForm } from "@/components/sections/newsletter-form";
@@ -13,8 +14,14 @@ export function Footer() {
         <div className="grid gap-12 lg:grid-cols-[1.2fr_1fr_1fr_1.1fr]">
           <div>
             <Link href="/" className="inline-flex items-center gap-2.5">
-              <span className="flex h-10 w-10 items-center justify-center rounded-2xl bg-gradient-to-br from-primary via-secondary to-accent text-white">
-                <Cross className="h-5 w-5" aria-hidden="true" />
+              <span className="relative block h-9 w-[54px] shrink-0">
+                <Image
+                  src="/logo-mark.png"
+                  alt=""
+                  fill
+                  sizes="54px"
+                  className="object-contain object-left"
+                />
               </span>
               <span className="text-lg font-bold text-primary">
                 {siteConfig.name}

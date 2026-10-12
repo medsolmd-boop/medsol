@@ -1,17 +1,15 @@
 .accordion-gallery {
-  --ag-accent: #2ec4b6;
-  --ag-overlay: #0a365c;
+  --ag-accent: #1f6b4a;
+  --ag-overlay: #0e2236;
   --ag-text: #ffffff;
   --ag-gap: 10px;
-  --ag-radius: 24px;
+  --ag-radius: 32px;
 
   display: flex;
   flex-direction: row;
   gap: var(--ag-gap);
   width: 100%;
   max-width: 100%;
-  perspective: 1400px;
-  perspective-origin: 50% 50%;
 }
 
 .accordion-gallery--vertical {
@@ -29,11 +27,9 @@
   display: block;
   text-decoration: none;
   outline: none;
-  transform-style: preserve-3d;
   transform-origin: center center;
-  background: #0f4c81;
-  box-shadow: 0 14px 36px -16px rgba(15, 76, 129, 0.45);
-  will-change: flex-grow, transform;
+  background: #16324f;
+  box-shadow: 0 14px 36px -16px rgba(22, 50, 79, 0.35);
   -webkit-tap-highlight-color: transparent;
 }
 
@@ -58,7 +54,6 @@
   width: 100%;
   height: 100%;
   filter: grayscale(var(--ag-gray));
-  will-change: transform, filter;
   transform-origin: center center;
 }
 

@@ -9,33 +9,33 @@ import { AccordionGallery } from "@/components/ui/accordion-gallery";
 const audienceItems = [
   {
     image:
-      "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1400&q=80",
     label: "Independent Physicians",
-    alt: "Independent physician reviewing patient care in a medical practice",
+    alt: "Practice administrator reviewing billing reports at a desk",
   },
   {
     image:
-      "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=1400&q=80",
     label: "Specialty Clinics",
-    alt: "Specialty clinic hallway serving healthcare providers",
+    alt: "Billing specialist reviewing claims and payment records",
   },
   {
     image:
-      "https://images.unsplash.com/photo-1631815588090-d4bfec5b1ccb?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1400&q=80",
     label: "Urgent Care Centers",
-    alt: "Urgent care medical setting for outsourced billing support",
+    alt: "Revenue dashboard on a laptop used for medical billing follow-up",
   },
   {
     image:
-      "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=1400&q=80",
     label: "Behavioral Health",
-    alt: "Healthcare professional with tablet",
+    alt: "Billing team meeting about claim follow-up and collections",
   },
   {
     image:
-      "https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1400&q=80",
     label: "Multi-Provider Groups",
-    alt: "Modern medical facility exterior",
+    alt: "Professional office where a multi-provider group manages operations",
   },
 ];
 
@@ -61,8 +61,8 @@ export function WhoWeServe({ title, description }: WhoWeServeProps) {
             trigger="auto"
             height={440}
             gap={12}
-            radius={24}
-            accentColor="#2ec4b6"
+            radius={32}
+            accentColor="#1f6b4a"
             overlayColor="#0a365c"
             textColor="#ffffff"
             grayscale

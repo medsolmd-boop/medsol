@@ -39,11 +39,11 @@ export function BenefitGrid({
       <FadeIn className="mt-12">
         <div className="relative">
           <div
-            className="pointer-events-none absolute inset-y-0 left-0 z-[1] w-16 bg-gradient-to-r from-[#eef5fa] to-transparent md:w-28"
+            className="pointer-events-none absolute inset-y-0 left-0 z-[1] w-16 bg-gradient-to-r from-[#f3f0e8] to-transparent md:w-28"
             aria-hidden="true"
           />
           <div
-            className="pointer-events-none absolute inset-y-0 right-0 z-[1] w-16 bg-gradient-to-l from-[#eef5fa] to-transparent md:w-28"
+            className="pointer-events-none absolute inset-y-0 right-0 z-[1] w-16 bg-gradient-to-l from-[#f3f0e8] to-transparent md:w-28"
             aria-hidden="true"
           />
 
@@ -58,9 +58,9 @@ export function BenefitGrid({
               return (
               <div
                 key={`${item}-${index}`}
-                className="glass flex h-[72px] w-[280px] shrink-0 items-center gap-3 rounded-[1.5rem] px-5 sm:w-[320px]"
+                className="flex h-[76px] w-[280px] shrink-0 items-center gap-3 rounded-full border border-border bg-white px-5 sm:w-[340px]"
               >
-                <span className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-xl ${iconTone}`}>
+                <span className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-full ${iconTone}`}>
                   <Icon className="h-5 w-5" aria-hidden="true" />
                 </span>
                 <h3 className="line-clamp-2 text-sm font-semibold leading-snug text-foreground sm:text-base">

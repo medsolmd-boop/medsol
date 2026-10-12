@@ -16,11 +16,12 @@ export const homeContent = {
   hero: {
     h1: "Medical Billing Services That Maximize Revenue and Reduce Administrative Burden",
     subheadline:
-      "End-to-end revenue cycle management, credentialing, and front-desk support built so healthcare providers get paid faster and spend less time on paperwork.",
+      "Claim submission, denial follow-up, payment posting, and credentialing for practices that want predictable collections and a shorter accounts-receivable cycle.",
     primaryCta: siteConfig.cta.freeAssessment,
     secondaryCta: "Explore Our Services",
   },
-  intro: `Healthcare providers should focus on delivering exceptional patient care, not chasing unpaid claims, correcting billing errors, or spending hours on insurance follow-ups. As a revenue cycle management company, ${siteConfig.name} helps practices outsource medical billing and simplify the entire revenue cycle, from patient registration and eligibility verification through claim submission, payment posting, denial management, and accounts receivable recovery, so every legitimate dollar gets collected, on time and in full.`,
+  intro: `Most practices lose revenue in the gap between a visit and a paid claim: eligibility that was never checked, charges that sit unbilled, denials that age out, and payments that never get posted to the right account. ${siteConfig.name} runs that work as a billing operation, from registration and charge entry through claim scrubbing, payer follow-up, and accounts-receivable recovery.`,
+  introDetail: `You get a named billing team, specialty-specific claim rules, and a monthly view of clean-claim rate, denial reasons, days in A/R, and what was collected. The goal is simple: more of the money you already earned, with less staff time spent on hold with payers.`,
   services: [
     {
       title: "Medical Billing Services",

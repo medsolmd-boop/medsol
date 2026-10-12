@@ -14,7 +14,7 @@ export function LenisProvider({ children }: { children: React.ReactNode }) {
     const lenis = new Lenis({
       autoRaf: true,
       // Higher lerp + wheel = snappier, faster scroll
-      lerp: 0.12,
+      lerp: 0.18,
       smoothWheel: true,
       wheelMultiplier: 1.05,
       touchMultiplier: 1.2,

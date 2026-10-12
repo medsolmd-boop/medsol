@@ -28,7 +28,7 @@ export function PageHero({
   children,
 }: PageHeroProps) {
   return (
-    <section className="hero-gradient noise-overlay relative overflow-x-clip pb-16 pt-32 md:pb-24 md:pt-40">
+    <section className="hero-gradient relative overflow-x-clip border-b border-border pb-16 pt-32 md:pb-20 md:pt-36">
       <Container className="relative z-[2]">
         {breadcrumb ? (
           <nav aria-label="Breadcrumb" className="mb-6">
@@ -47,38 +47,34 @@ export function PageHero({
             </ol>
           </nav>
         ) : null}
-        <div className="grid items-center gap-12 lg:grid-cols-[1.15fr_0.85fr]">
+        <div className="grid items-center gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-10">
           <div>
             {eyebrow ? (
               <FadeIn>
-                <p className="mb-5 inline-flex items-center gap-2 rounded-full border border-secondary/25 bg-gradient-to-r from-secondary/10 via-accent/10 to-spark/10 px-3.5 py-1.5 text-xs font-semibold uppercase tracking-[0.16em] text-secondary">
-                  <span
-                    className="h-1.5 w-1.5 rounded-full bg-accent shadow-[0_0_8px_rgba(42,212,196,0.8)]"
-                    aria-hidden="true"
-                  />
+                <p className="mb-4 text-sm font-semibold uppercase tracking-[0.18em] text-secondary">
                   {eyebrow}
                 </p>
               </FadeIn>
             ) : null}
             <FadeIn delay={0.05}>
-              <h1 className="max-w-3xl text-balance text-4xl font-bold tracking-tight text-foreground md:text-5xl lg:text-[3.35rem] lg:leading-[1.1]">
+              <h1 className="max-w-3xl text-balance text-4xl leading-[1.15] text-foreground md:text-5xl lg:text-[3.15rem]">
                 {h1}
               </h1>
             </FadeIn>
             <FadeIn delay={0.12}>
-              <p className="mt-6 max-w-2xl text-base leading-relaxed text-muted md:text-lg">
+              <p className="mt-6 max-w-[40rem] text-lg leading-[1.7] text-foreground/80 md:text-xl">
                 {subheadline}
               </p>
             </FadeIn>
             <FadeIn delay={0.18} className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <Button asChild size="lg" className="rounded-full">
+              <Button asChild size="lg">
                 <Link href={primaryHref}>
                   {primaryCta}
                   <ArrowRight className="h-4 w-4" aria-hidden="true" />
                 </Link>
               </Button>
               {secondaryCta ? (
-                <Button asChild size="lg" variant="outline" className="rounded-full">
+                <Button asChild size="lg" variant="outline">
                   <Link href={secondaryHref}>{secondaryCta}</Link>
                 </Button>
               ) : null}

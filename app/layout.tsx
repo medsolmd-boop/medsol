@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Plus_Jakarta_Sans } from "next/font/google";
+import { Source_Sans_3, Source_Serif_4 } from "next/font/google";
 import "./globals.css";
 import { siteConfig } from "@/lib/site-config";
 import { absoluteUrl } from "@/lib/utils";
@@ -17,9 +17,15 @@ import {
   organizationSchema,
 } from "@/lib/schema";
 
-const plusJakarta = Plus_Jakarta_Sans({
+const sourceSans = Source_Sans_3({
   subsets: ["latin"],
   variable: "--font-plus-jakarta",
+  display: "swap",
+});
+
+const sourceSerif = Source_Serif_4({
+  subsets: ["latin"],
+  variable: "--font-source-serif",
   display: "swap",
 });
 
@@ -78,7 +84,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${plusJakarta.variable} antialiased`}>
+      <body className={`${sourceSans.variable} ${sourceSerif.variable} antialiased`}>
         <JsonLd data={organizationSchema()} />
         <JsonLd data={healthcareBusinessSchema()} />
         <a

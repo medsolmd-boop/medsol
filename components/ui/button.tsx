@@ -4,16 +4,16 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-2xl text-sm font-semibold transition-[transform,box-shadow,background-color,color,border-color,filter] duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50",
+  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-full text-sm font-semibold transition-[background-color,color,border-color] duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50",
   {
     variants: {
       variant: {
         default:
-          "bg-gradient-to-br from-primary via-[#1460a0] to-secondary text-white shadow-[0_10px_30px_rgba(15,76,129,0.28),0_0_0_1px_rgba(74,168,255,0.12)] hover:-translate-y-0.5 hover:brightness-110 hover:shadow-[0_16px_36px_rgba(30,136,229,0.32)]",
+          "bg-primary text-white shadow-[0_8px_20px_rgba(22,50,79,0.16)] hover:bg-primary-dark",
         secondary:
-          "bg-secondary text-white shadow-[0_10px_30px_rgba(74,168,255,0.32)] hover:-translate-y-0.5 hover:brightness-110",
+          "bg-secondary text-white shadow-[0_8px_20px_rgba(31,107,74,0.18)] hover:brightness-110",
         accent:
-          "bg-accent text-white shadow-[0_10px_30px_rgba(42,212,196,0.34)] hover:-translate-y-0.5 hover:brightness-110",
+          "bg-primary text-white shadow-[0_8px_20px_rgba(22,50,79,0.16)] hover:bg-primary-dark",
         outline:
           "glass text-primary hover:-translate-y-0.5 hover:border-accent/45",
         ghost: "text-primary hover:bg-primary/5",

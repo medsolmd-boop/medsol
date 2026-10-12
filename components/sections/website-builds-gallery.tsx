@@ -56,7 +56,7 @@ export function WebsiteBuildsGallery() {
             height={440}
             gap={12}
             radius={24}
-            accentColor="#2ec4b6"
+            accentColor="#1f6b4a"
             overlayColor="#0a365c"
             textColor="#ffffff"
             grayscale

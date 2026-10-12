@@ -104,16 +104,7 @@ export function Testimonials({
                   key={item.name}
                   className="min-w-0 shrink-0 grow-0 basis-full pr-4 md:basis-1/2 lg:basis-[45%]"
                 >
-                  <figure
-                    className={cn(
-                      "gradient-border flex h-full flex-col rounded-[1.5rem] p-7 md:p-8",
-                      "shadow-[0_12px_40px_rgba(15,76,129,0.08)]",
-                      "transition-[transform,box-shadow,background-color] duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]",
-                      "will-change-transform",
-                      "hover:-translate-y-2",
-                      "hover:shadow-[0_22px_56px_rgba(15,76,129,0.18),0_0_0_1px_rgba(46,196,182,0.35),0_0_36px_rgba(46,196,182,0.45),0_0_64px_rgba(30,136,229,0.28)]"
-                    )}
-                  >
+                  <figure className="flex h-full flex-col rounded-[1.75rem] border border-border bg-white p-7 md:p-8">
                     <Quote
                       className="h-8 w-8 text-accent"
                       aria-hidden="true"

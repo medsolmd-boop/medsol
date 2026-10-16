@@ -13,15 +13,15 @@ export function LenisProvider({ children }: { children: React.ReactNode }) {
 
     const lenis = new Lenis({
       autoRaf: true,
-      // Higher lerp + wheel = snappier, faster scroll
-      lerp: 0.12,
+      // Silkier premium scroll — still responsive, not laggy
+      lerp: 0.1,
       smoothWheel: true,
-      wheelMultiplier: 1.05,
-      touchMultiplier: 1.2,
+      wheelMultiplier: 0.98,
+      touchMultiplier: 1.15,
       syncTouch: false,
       anchors: {
         offset: -88,
-        lerp: 0.14,
+        lerp: 0.12,
       },
       stopInertiaOnNavigate: true,
       respectReducedMotion: true,

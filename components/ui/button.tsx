@@ -4,18 +4,18 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-2xl text-sm font-semibold transition-[transform,box-shadow,background-color,color,border-color,filter] duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50",
+  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-2xl text-sm font-semibold tracking-[-0.01em] transition-[transform,box-shadow,background-color,color,border-color,filter] duration-[400ms] ease-[cubic-bezier(0.22,1,0.36,1)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary/50 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50",
   {
     variants: {
       variant: {
         default:
-          "bg-gradient-to-br from-primary via-[#1460a0] to-secondary text-white shadow-[0_10px_30px_rgba(15,76,129,0.28),0_0_0_1px_rgba(74,168,255,0.12)] hover:-translate-y-0.5 hover:brightness-110 hover:shadow-[0_16px_36px_rgba(30,136,229,0.32)]",
+          "bg-primary text-white shadow-[0_1px_0_rgba(255,255,255,0.18)_inset,0_12px_28px_rgba(27,58,87,0.22)] hover:-translate-y-0.5 hover:bg-primary-dark hover:shadow-[0_18px_36px_rgba(27,58,87,0.28)]",
         secondary:
-          "bg-secondary text-white shadow-[0_10px_30px_rgba(74,168,255,0.32)] hover:-translate-y-0.5 hover:brightness-110",
+          "bg-secondary text-white shadow-[0_10px_24px_rgba(61,111,153,0.24)] hover:-translate-y-0.5 hover:brightness-105",
         accent:
-          "bg-accent text-white shadow-[0_10px_30px_rgba(42,212,196,0.34)] hover:-translate-y-0.5 hover:brightness-110",
+          "bg-accent text-white shadow-[0_10px_24px_rgba(58,168,156,0.28)] hover:-translate-y-0.5 hover:brightness-105",
         outline:
-          "glass text-primary hover:-translate-y-0.5 hover:border-accent/45",
+          "glass text-primary hover:-translate-y-0.5 hover:border-primary/20 hover:shadow-[0_14px_30px_rgba(28,36,48,0.08)]",
         ghost: "text-primary hover:bg-primary/5",
         link: "rounded-none text-secondary underline-offset-4 hover:underline",
       },

@@ -10,31 +10,31 @@ const medicalBillingProjectItems = [
     image:
       "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&w=1400&q=80",
     label: "Claim Scrubbing & Submission",
-    alt: "Specialist preparing electronic claims on a laptop",
+    alt: "Billing specialist preparing electronic claims on a laptop",
   },
   {
     image:
-      "https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=1400&q=80",
     label: "Payment Posting",
-    alt: "Laptop and financial records used for payment posting and reconciliation",
+    alt: "Financial documents used for payment posting and reconciliation",
   },
   {
     image:
-      "https://images.unsplash.com/photo-1591696205602-2f950c417cb9?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1400&q=80",
     label: "Denial Rate Trends",
-    alt: "Line graph showing denial rate performance over time",
+    alt: "Analytics charts showing denial performance over time",
   },
   {
     image:
-      "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1400&q=80",
     label: "Aging AR Dashboard",
-    alt: "Analytics dashboard tracking aging accounts receivable",
+    alt: "Laptop dashboard tracking aging accounts receivable",
   },
   {
     image:
       "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=1400&q=80",
     label: "Payer Follow-Up",
-    alt: "Insurance follow-up notes and claim files on a desk",
+    alt: "Desk paperwork for insurance follow-up and claim files",
   },
 ];
 

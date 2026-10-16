@@ -32,7 +32,7 @@ type PhotoHeroShellProps = {
 export function PhotoHeroShell({
   src,
   alt,
-  intensity = "soft",
+  intensity = "strong",
   breadcrumb,
   children,
   align = "start",

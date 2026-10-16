@@ -161,7 +161,7 @@ export function SupportAssistant() {
           data-lenis-prevent
           className="glass-panel flex w-[min(100vw-2.5rem,380px)] flex-col overflow-hidden rounded-[1.5rem]"
         >
-          <div className="flex shrink-0 items-center justify-between bg-gradient-to-r from-primary to-secondary px-4 py-3 text-white">
+          <div className="flex shrink-0 items-center justify-between bg-primary px-4 py-3 text-white">
             <div className="flex items-center gap-2">
               {view !== "menu" ? (
                 <button

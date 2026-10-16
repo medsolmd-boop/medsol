@@ -9,7 +9,7 @@ type BrandLogoProps = {
 };
 
 /**
- * MedSol wordmark (M + cyan plus). Transparent PNG for light surfaces.
+ * MedSol mark (petal icon only — no wordmark). Transparent PNG for light surfaces.
  */
 export function BrandLogo({
   className,
@@ -20,8 +20,8 @@ export function BrandLogo({
     <Image
       src="/logo.png"
       alt={alt}
-      width={485}
-      height={439}
+      width={254}
+      height={228}
       priority={priority}
       className={cn("h-full w-full object-contain", className)}
     />

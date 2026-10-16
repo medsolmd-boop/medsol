@@ -73,39 +73,35 @@ export default function HomePage() {
               {
                 label: "HIPAA-aware workflows",
                 icon: ShieldCheck,
-                tone: "text-accent bg-accent/10 group-hover:bg-accent group-hover:shadow-[0_6px_16px_rgba(42,212,196,0.35)]",
+                tone: "text-accent bg-accent/10 group-hover:bg-accent",
               },
               {
                 label: "Transparent reporting",
                 icon: ClipboardCheck,
-                tone: "text-secondary bg-secondary/10 group-hover:bg-secondary group-hover:shadow-[0_6px_16px_rgba(74,168,255,0.32)]",
+                tone: "text-secondary bg-secondary/10 group-hover:bg-secondary",
               },
               {
                 label: "Specialty-aware specialists",
                 icon: Stethoscope,
-                tone: "text-primary bg-primary/10 group-hover:bg-primary group-hover:shadow-[0_6px_16px_rgba(15,76,129,0.3)]",
+                tone: "text-primary bg-primary/10 group-hover:bg-primary",
               },
               {
                 label: "US-focused RCM support",
                 icon: MapPinned,
-                tone: "text-spark bg-spark/15 group-hover:bg-spark group-hover:shadow-[0_6px_16px_rgba(243,193,75,0.4)]",
+                tone: "text-spark bg-spark/15 group-hover:bg-spark",
               },
             ].map((item) => (
               <StaggerItem key={item.label}>
-                <div className="group relative inline-flex cursor-default items-center gap-2.5 rounded-full border border-white/70 bg-[linear-gradient(165deg,rgba(255,255,255,0.72),rgba(232,244,251,0.58))] px-4 py-2.5 text-sm font-medium text-muted shadow-[0_4px_16px_rgba(15,76,129,0.04),inset_0_-12px_20px_rgba(15,76,129,0.04)] backdrop-blur-sm transition-all duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-1 hover:border-accent/30 hover:bg-white hover:text-primary hover:shadow-[0_12px_28px_rgba(42,212,196,0.18)]">
+                <div className="group relative inline-flex cursor-default items-center gap-2.5 rounded-full border border-[rgba(27,58,87,0.08)] bg-[linear-gradient(165deg,rgba(255,255,255,0.92),rgba(244,246,248,0.78))] px-4 py-2.5 text-sm font-medium text-muted shadow-[0_1px_0_rgba(255,255,255,0.8)_inset,0_8px_20px_rgba(28,36,48,0.05)] transition-all duration-[400ms] ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-1 hover:border-primary/15 hover:bg-white hover:text-primary hover:shadow-[0_14px_28px_rgba(28,36,48,0.08)]">
                   <span
-                    className={`relative flex h-8 w-8 shrink-0 items-center justify-center rounded-full transition-all duration-300 group-hover:scale-110 group-hover:text-white ${item.tone}`}
+                    className={`relative flex h-8 w-8 shrink-0 items-center justify-center rounded-full transition-all duration-[400ms] group-hover:scale-105 group-hover:text-white ${item.tone}`}
                   >
                     <item.icon
-                      className="relative z-[1] h-4 w-4 transition-transform duration-300 group-hover:rotate-[-8deg]"
-                      aria-hidden="true"
-                    />
-                    <span
-                      className="pointer-events-none absolute inset-0 rounded-full bg-accent/30 opacity-0 group-hover:animate-ping group-hover:opacity-50"
+                      className="relative z-[1] h-4 w-4"
                       aria-hidden="true"
                     />
                   </span>
-                  <span className="transition-colors duration-300">
+                  <span className="transition-colors duration-[400ms]">
                     {item.label}
                   </span>
                 </div>

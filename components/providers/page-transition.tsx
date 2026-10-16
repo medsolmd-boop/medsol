@@ -24,7 +24,7 @@ function getLenis() {
 const variants: Variants = {
   enter: {
     opacity: 0,
-    y: 10,
+    y: 14,
   },
   center: {
     opacity: 1,
@@ -32,8 +32,8 @@ const variants: Variants = {
   },
   exit: {
     opacity: 0,
-    y: -6,
-    transition: { duration: 0.18, ease: easeOutSoft },
+    y: -8,
+    transition: { duration: 0.22, ease: easeOutSoft },
   },
 };
 
@@ -95,8 +95,8 @@ export function PageTransition({ children }: { children: React.ReactNode }) {
           initial="enter"
           animate="center"
           exit="exit"
-          transition={{ duration: 0.28, ease: easeOutSoft }}
-          className="relative w-full bg-background"
+          transition={{ duration: 0.36, ease: easeOutSoft }}
+          className="relative w-full bg-transparent"
           style={{
             backfaceVisibility: "hidden",
             transform: "translateZ(0)",

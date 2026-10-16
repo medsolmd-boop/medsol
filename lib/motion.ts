@@ -4,16 +4,16 @@ export const easeOutExpo: [number, number, number, number] = [0.16, 1, 0.3, 1];
 export const easeOutSoft: [number, number, number, number] = [0.22, 1, 0.36, 1];
 
 export const fadeUp = {
-  duration: 0.72,
+  duration: 0.8,
   ease: easeOutExpo,
 };
 
 export const staggerFast = {
-  staggerChildren: 0.09,
-  delayChildren: 0.08,
+  staggerChildren: 0.08,
+  delayChildren: 0.06,
 };
 
 export const staggerReveal = {
-  staggerChildren: 0.11,
-  delayChildren: 0.12,
+  staggerChildren: 0.1,
+  delayChildren: 0.1,
 };

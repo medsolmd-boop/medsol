@@ -8,18 +8,18 @@ type HeroBackgroundProps = {
 };
 
 /**
- * Clear photo inside an enclosed hero, with a dark faded overlay
- * so imagery stays readable and copy has strong contrast.
+ * Full-bleed photo with a readable ink veil.
+ * Left stays dark for copy; right keeps a hint of the photo.
  */
 export function HeroBackground({
   src,
   alt,
-  intensity = "soft",
+  intensity = "strong",
 }: HeroBackgroundProps) {
   const veil =
     intensity === "strong"
-      ? "from-black/72 via-black/58 to-black/48"
-      : "from-black/68 via-black/52 to-black/42";
+      ? "from-black/82 via-black/68 to-black/55"
+      : "from-black/74 via-black/58 to-black/46";
 
   return (
     <div
@@ -32,11 +32,13 @@ export function HeroBackground({
         fill
         priority
         sizes="100vw"
-        className="scale-[1.02] object-cover object-center"
+        className="scale-[1.03] object-cover object-center brightness-[0.72] contrast-[1.05] saturate-[0.85]"
       />
-      {/* Dark faded veil — photo stays clear underneath */}
-      <div className={`absolute inset-0 bg-gradient-to-br ${veil}`} />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_70%_at_15%_40%,rgba(12,92,86,0.28),transparent_60%),radial-gradient(ellipse_55%_50%_at_90%_20%,rgba(26,127,196,0.18),transparent_55%)]" />
+      {/* Primary readability veil — heavier on the copy side */}
+      <div className={`absolute inset-0 bg-gradient-to-r ${veil}`} />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-transparent to-black/35" />
+      {/* Soft brand wash — muted, not neon */}
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_60%_at_12%_45%,rgba(27,58,87,0.45),transparent_58%),radial-gradient(ellipse_50%_45%_at_92%_18%,rgba(58,168,156,0.12),transparent_55%)]" />
     </div>
   );
 }

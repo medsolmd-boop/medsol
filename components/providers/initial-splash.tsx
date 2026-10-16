@@ -76,7 +76,7 @@ export function InitialSplash() {
             src="/logo.png"
             alt=""
             width={64}
-            height={58}
+            height={57}
             className="site-splash-logo"
             decoding="async"
           />

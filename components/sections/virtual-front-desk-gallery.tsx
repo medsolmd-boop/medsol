@@ -8,33 +8,33 @@ import { AccordionGallery } from "@/components/ui/accordion-gallery";
 const frontDeskProjectItems = [
   {
     image:
-      "https://images.unsplash.com/photo-1626863905121-3b0c0ed7b94c?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1560264418-c4445382edbc?auto=format&fit=crop&w=1400&q=80",
     label: "Live Call Answering",
-    alt: "Virtual receptionist wearing a headset and smiling while taking patient calls",
+    alt: "Virtual front desk specialist with headset answering practice calls",
   },
   {
     image:
       "https://images.unsplash.com/photo-1553775282-20af80779df7?auto=format&fit=crop&w=1400&q=80",
     label: "Headset-Ready Support",
-    alt: "Professional headset at a virtual front desk workstation",
-  },
-  {
-    image:
-      "https://images.unsplash.com/photo-1603714228681-b399854b8f80?auto=format&fit=crop&w=1400&q=80",
-    label: "Professional Reception Team",
-    alt: "Customer support agent wearing a professional headset in an office",
+    alt: "Professional headset at a remote front desk workstation",
   },
   {
     image:
       "https://images.unsplash.com/photo-1525182008055-f88b95ff7980?auto=format&fit=crop&w=1400&q=80",
-    label: "Appointment Scheduling",
-    alt: "Front desk specialist on a call while reviewing the schedule",
+    label: "Professional Support Team",
+    alt: "Support specialist on a call in a modern office",
   },
   {
     image:
-      "https://images.unsplash.com/photo-1560264418-c4445382edbc?auto=format&fit=crop&w=1400&q=80",
-    label: "Patient Check-In & Intake",
-    alt: "Office team handling patient intake and registration tasks",
+      "https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1400&q=80",
+    label: "Appointment Scheduling",
+    alt: "Coordinator scheduling appointments from a laptop workspace",
+  },
+  {
+    image:
+      "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=1400&q=80",
+    label: "Intake Coordination",
+    alt: "Team coordinating registration and intake workflows",
   },
 ];
 

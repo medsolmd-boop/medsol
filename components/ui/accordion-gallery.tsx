@@ -42,17 +42,17 @@ type AccordionGalleryProps = {
 const DEFAULT_ITEMS: AccordionGalleryItem[] = [
   {
     image:
-      "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=1200&q=80",
     label: "Independent Physicians",
   },
   {
     image:
-      "https://images.unsplash.com/photo-1551601651-2a8555f1a136?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1600880292089-90a7e086ee0c?auto=format&fit=crop&w=1200&q=80",
     label: "Specialty Clinics",
   },
   {
     image:
-      "https://images.unsplash.com/photo-1631815588090-d4bfec5b1ccb?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1400&q=80",
     label: "Urgent Care",
   },
   {
@@ -62,7 +62,7 @@ const DEFAULT_ITEMS: AccordionGalleryItem[] = [
   },
   {
     image:
-      "https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=1200&q=80",
     label: "Multi-Provider Groups",
   },
 ];

@@ -20,9 +20,9 @@ const mipsProjectItems = [
   },
   {
     image:
-      "https://images.unsplash.com/photo-1587614382346-4ec70e388b28?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1400&q=80",
     label: "Promoting Interoperability",
-    alt: "EHR workstation used for Promoting Interoperability attestation",
+    alt: "Secure workstation used for Promoting Interoperability attestation",
   },
   {
     image:

@@ -9,33 +9,33 @@ import { AccordionGallery } from "@/components/ui/accordion-gallery";
 const audienceItems = [
   {
     image:
-      "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=1400&q=80",
     label: "Independent Physicians",
-    alt: "Independent physician in a medical practice",
+    alt: "Independent practice owner reviewing operations in a professional office",
   },
   {
     image:
-      "https://images.unsplash.com/photo-1551601651-2a8555f1a136?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1600880292089-90a7e086ee0c?auto=format&fit=crop&w=1400&q=80",
     label: "Specialty Clinics",
-    alt: "Specialist clinician providing care in a clinic",
+    alt: "Specialty clinic leadership collaborating in a modern office",
   },
   {
     image:
-      "https://images.unsplash.com/photo-1631815588090-d4bfec5b1ccb?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1400&q=80",
     label: "Urgent Care Centers",
-    alt: "Urgent care medical setting for outsourced billing support",
+    alt: "Multi-location urgent care operations office for outsourced billing support",
   },
   {
     image:
       "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=1400&q=80",
     label: "Behavioral Health",
-    alt: "Behavioral health professional supporting patients",
+    alt: "Behavioral health practice administrator in a calm professional workspace",
   },
   {
     image:
-      "https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=1400&q=80",
     label: "Multi-Provider Groups",
-    alt: "Modern medical facility for multi-provider groups",
+    alt: "Multi-provider group leadership meeting on revenue operations",
   },
 ];
 
@@ -62,8 +62,8 @@ export function WhoWeServe({ title, description }: WhoWeServeProps) {
             height={440}
             gap={12}
             radius={24}
-            accentColor="#2ec4b6"
-            overlayColor="#0a365c"
+            accentColor="#3aa89c"
+            overlayColor="#1b3a57"
             textColor="#ffffff"
             grayscale
             showLabels

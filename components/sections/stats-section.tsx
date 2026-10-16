@@ -25,18 +25,18 @@ export function StatsSection({
     <section
       className={
         brand
-          ? "relative overflow-hidden bg-gradient-to-br from-primary via-[#125a98] to-[#0d6cb8] py-12 text-white md:py-14"
+          ? "relative overflow-hidden bg-primary py-12 text-white md:py-14"
           : "section-surface border-y py-12 md:py-14"
       }
     >
       {brand ? (
         <>
           <div
-            className="pointer-events-none absolute -left-10 top-0 h-48 w-48 rounded-full bg-accent/30 blur-3xl"
+            className="pointer-events-none absolute -left-10 top-0 h-48 w-48 rounded-full bg-accent/15 blur-3xl"
             aria-hidden="true"
           />
           <div
-            className="pointer-events-none absolute -right-8 bottom-0 h-40 w-40 rounded-full bg-spark/20 blur-3xl"
+            className="pointer-events-none absolute -right-8 bottom-0 h-40 w-40 rounded-full bg-secondary/20 blur-3xl"
             aria-hidden="true"
           />
         </>

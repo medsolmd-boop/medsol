@@ -27,7 +27,7 @@ export function CalculatorPromo({
               aria-hidden="true"
             />
             <div className="relative z-[1] grid items-center gap-8 lg:grid-cols-[auto_1fr_auto]">
-              <span className="flex h-16 w-16 items-center justify-center rounded-[1.25rem] bg-primary text-white shadow-[0_12px_28px_rgba(15,76,129,0.25)]">
+              <span className="flex h-16 w-16 items-center justify-center rounded-[1.25rem] bg-primary text-white shadow-[0_12px_28px_rgba(10,21,64,0.25)]">
                 <Calculator className="h-7 w-7" aria-hidden="true" />
               </span>
               <div>

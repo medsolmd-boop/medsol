@@ -249,7 +249,7 @@ export function SupportAssistant() {
                   <button
                     type="button"
                     onClick={() => setView("live")}
-                    className="flex w-full items-center gap-3 rounded-2xl bg-accent px-4 py-3 text-left text-white shadow-[0_10px_24px_rgba(46,196,182,0.28)] transition hover:brightness-105"
+                    className="flex w-full items-center gap-3 rounded-2xl bg-accent px-4 py-3 text-left text-white shadow-[0_10px_24px_rgba(80,173,170,0.28)] transition hover:brightness-105"
                   >
                     <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-white/15">
                       <Headphones className="h-5 w-5" aria-hidden="true" />
@@ -405,7 +405,7 @@ export function SupportAssistant() {
         type="button"
         onClick={() => setOpen((prev) => !prev)}
         className={cn(
-          "inline-flex h-14 w-14 items-center justify-center rounded-full bg-primary text-white shadow-[0_14px_34px_rgba(15,76,129,0.35)] transition hover:-translate-y-0.5 hover:brightness-105",
+          "inline-flex h-14 w-14 items-center justify-center rounded-full bg-primary text-white shadow-[0_14px_34px_rgba(10,21,64,0.35)] transition hover:-translate-y-0.5 hover:brightness-105",
           open && "bg-secondary"
         )}
         aria-label={open ? "Close support assistant" : "Open support assistant"}

@@ -26,11 +26,11 @@ const icons: Record<string, LucideIcon> = {
 
 const iconStyles: Record<string, string> = {
   FileText:
-    "bg-gradient-to-br from-primary to-[#0a365c] text-white shadow-[0_12px_28px_rgba(15,76,129,0.28)]",
+    "bg-gradient-to-br from-primary to-[#020837] text-white shadow-[0_12px_28px_rgba(10,21,64,0.28)]",
   BadgeCheck:
-    "bg-gradient-to-br from-secondary to-highlight text-white shadow-[0_12px_28px_rgba(74,168,255,0.32)]",
+    "bg-gradient-to-br from-secondary to-highlight text-white shadow-[0_12px_28px_rgba(48,101,212,0.32)]",
   Headset:
-    "bg-gradient-to-br from-accent to-[#169e92] text-white shadow-[0_12px_28px_rgba(42,212,196,0.32)]",
+    "bg-gradient-to-br from-accent to-[#3d80b9] text-white shadow-[0_12px_28px_rgba(80,173,170,0.32)]",
   Globe:
     "bg-gradient-to-br from-[#5b6cff] to-[#7c4dff] text-white shadow-[0_12px_28px_rgba(91,108,255,0.32)]",
   Megaphone:
@@ -42,7 +42,7 @@ const iconStyles: Record<string, string> = {
 };
 
 const fallbackIconStyle =
-  "bg-gradient-to-br from-primary to-secondary text-white shadow-[0_12px_28px_rgba(15,76,129,0.22)]";
+  "bg-gradient-to-br from-primary to-secondary text-white shadow-[0_12px_28px_rgba(10,21,64,0.22)]";
 
 type Service = {
   title: string;
@@ -88,7 +88,7 @@ export function ServiceCards({
               >
                 <Link
                   href={service.href}
-                  className={`glass group flex h-full flex-col rounded-[1.5rem] p-7 transition-all duration-300 hover:-translate-y-1.5 hover:border-accent/35 hover:shadow-[0_20px_50px_rgba(42,212,196,0.14)] md:p-8 ${
+                  className={`glass group flex h-full flex-col rounded-[1.5rem] p-7 transition-all duration-300 hover:-translate-y-1.5 hover:border-accent/35 hover:shadow-[0_20px_50px_rgba(80,173,170,0.14)] md:p-8 ${
                     aloneOnMd ? "md:w-[calc(50%-0.75rem)] xl:w-full" : ""
                   }`}
                 >

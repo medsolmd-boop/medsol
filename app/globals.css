@@ -1,19 +1,21 @@
 @import "tailwindcss";
 
 :root {
-  /* Cool stationery ink — premium paper, not clinical hospital */
-  --primary: #1b3a57;
-  --primary-dark: #12293d;
-  --secondary: #3d6f99;
-  --accent: #3aa89c;
-  --highlight: #5b8fb8;
+  /* Medsol logo: navy wordmark, blue petal, teal petal */
+  --primary: #0a1540;
+  --primary-dark: #020837;
+  --secondary: #3065d4;
+  --accent: #50adaa;
+  --highlight: #3d80b9;
   --spark: #c4a574;
   --background: #e9ebef;
   --card: rgba(252, 252, 253, 0.92);
-  --foreground: #1c2430;
+  --foreground: #0a1540;
   --muted: #5f6b7a;
-  --border: rgba(27, 58, 87, 0.1);
+  --border: rgba(10, 21, 64, 0.1);
   --radius: 1.35rem;
+  --topbar-height: 3rem;
+  --navbar-height: 4.25rem;
   --shadow-soft:
     0 1px 0 rgba(255, 255, 255, 0.7),
     0 12px 28px rgba(28, 36, 48, 0.06),
@@ -58,6 +60,12 @@
   border-color: var(--border);
 }
 
+@media (min-width: 640px) {
+  :root {
+    --topbar-height: 2.25rem;
+  }
+}
+
 html {
   scroll-behavior: auto;
 }
@@ -66,9 +74,9 @@ body {
   background-color: #e9ebef;
   background-image:
     var(--paper-fiber),
-    radial-gradient(ellipse 80% 50% at 12% -10%, rgba(91, 143, 184, 0.08), transparent 55%),
-    radial-gradient(ellipse 60% 40% at 92% 0%, rgba(58, 168, 156, 0.06), transparent 50%),
-    radial-gradient(ellipse 50% 35% at 50% 100%, rgba(27, 58, 87, 0.05), transparent 55%),
+    radial-gradient(ellipse 80% 50% at 12% -10%, rgba(61, 128, 185, 0.08), transparent 55%),
+    radial-gradient(ellipse 60% 40% at 92% 0%, rgba(80, 173, 170, 0.06), transparent 50%),
+    radial-gradient(ellipse 50% 35% at 50% 100%, rgba(10, 21, 64, 0.05), transparent 55%),
     linear-gradient(180deg, #f2f3f6 0%, #e9ebef 42%, #f0f1f4 100%);
   background-size: 220px 220px, auto, auto, auto, auto;
   background-blend-mode: multiply, normal, normal, normal, normal;
@@ -111,7 +119,7 @@ body {
   background-repeat: repeat, no-repeat;
   background-size: 180px 180px, auto;
   background-blend-mode: multiply, normal;
-  border: 1px solid rgba(27, 58, 87, 0.08);
+  border: 1px solid rgba(10, 21, 64, 0.08);
   box-shadow: var(--shadow-soft), var(--glass-highlight), var(--glass-shade);
   backdrop-filter: var(--glass-blur);
   -webkit-backdrop-filter: var(--glass-blur);
@@ -120,7 +128,7 @@ body {
 .glass-strong {
   background-color: var(--glass-bg-strong);
   background-image: var(--glass-wash-strong);
-  border-color: rgba(27, 58, 87, 0.1);
+  border-color: rgba(10, 21, 64, 0.1);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
 }
@@ -156,8 +164,8 @@ body {
     linear-gradient(165deg, rgba(255, 255, 255, 0.94), rgba(244, 246, 248, 0.88)),
     linear-gradient(
       135deg,
-      rgba(61, 111, 153, 0.45),
-      rgba(58, 168, 156, 0.4),
+      rgba(48, 101, 212, 0.45),
+      rgba(80, 173, 170, 0.4),
       rgba(196, 165, 116, 0.35)
     );
   background-origin: border-box;
@@ -172,9 +180,9 @@ body {
 
 .hero-gradient {
   background:
-    radial-gradient(ellipse 70% 55% at 8% 0%, rgba(91, 143, 184, 0.1), transparent 55%),
-    radial-gradient(ellipse 55% 45% at 96% 8%, rgba(58, 168, 156, 0.07), transparent 50%),
-    radial-gradient(ellipse 50% 40% at 50% 100%, rgba(27, 58, 87, 0.05), transparent 55%),
+    radial-gradient(ellipse 70% 55% at 8% 0%, rgba(61, 128, 185, 0.1), transparent 55%),
+    radial-gradient(ellipse 55% 45% at 96% 8%, rgba(80, 173, 170, 0.07), transparent 50%),
+    radial-gradient(ellipse 50% 40% at 50% 100%, rgba(10, 21, 64, 0.05), transparent 55%),
     linear-gradient(180deg, rgba(248, 249, 251, 0.9) 0%, rgba(236, 238, 242, 0.45) 55%, transparent 100%);
 }
 
@@ -193,7 +201,7 @@ body {
     linear-gradient(180deg, rgba(252, 252, 253, 0.72), rgba(244, 245, 247, 0.55));
   background-size: 200px 200px, auto;
   background-blend-mode: multiply, normal;
-  border-color: rgba(27, 58, 87, 0.08);
+  border-color: rgba(10, 21, 64, 0.08);
 }
 
 /* Drop backdrop blur during route transitions to keep swaps smooth */
@@ -242,8 +250,8 @@ html.is-page-transitioning {
       linear-gradient(165deg, rgba(255, 255, 255, 0.97), rgba(244, 246, 248, 0.95)),
       linear-gradient(
         135deg,
-        rgba(61, 111, 153, 0.45),
-        rgba(58, 168, 156, 0.4),
+        rgba(48, 101, 212, 0.45),
+        rgba(80, 173, 170, 0.4),
         rgba(196, 165, 116, 0.35)
       );
   }
@@ -474,17 +482,17 @@ html.splash-active {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 11.5rem;
-  height: 11.5rem;
+  gap: 1.5rem;
 }
 
 .site-splash-ring {
-  position: absolute;
-  inset: 0;
+  position: relative;
+  width: 3.5rem;
+  height: 3.5rem;
   border-radius: 9999px;
   border: 2px solid transparent;
-  border-top-color: var(--primary);
-  border-bottom-color: var(--primary);
+  border-top-color: var(--secondary);
+  border-bottom-color: var(--accent);
   animation: site-splash-spin 1.05s linear infinite;
 }
 
@@ -498,18 +506,8 @@ html.splash-active {
 }
 
 .site-splash-logo {
-  width: 3.25rem;
-  height: 3.25rem;
-  object-fit: contain;
-}
-
-.site-splash-wordmark {
-  margin: 0;
-  font-size: 1.35rem;
-  font-weight: 700;
-  letter-spacing: -0.02em;
-  color: var(--primary);
-  font-family: var(--font-plus-jakarta), ui-sans-serif, system-ui, sans-serif;
+  width: min(20rem, 78vw);
+  height: auto;
 }
 
 @keyframes site-splash-spin {
@@ -521,9 +519,9 @@ html.splash-active {
 @media (prefers-reduced-motion: reduce) {
   .site-splash-ring {
     animation: none;
-    border-color: color-mix(in srgb, var(--primary) 35%, transparent);
-    border-top-color: var(--primary);
-    border-bottom-color: var(--primary);
+    border-color: color-mix(in srgb, var(--secondary) 35%, transparent);
+    border-top-color: var(--secondary);
+    border-bottom-color: var(--accent);
   }
 
   .site-splash {

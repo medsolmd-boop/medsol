@@ -83,7 +83,7 @@ export function Timeline({
                     "group relative h-full min-w-0 overflow-hidden rounded-[1.35rem] border text-left",
                     "transition-[flex-grow,background-color,border-color,box-shadow,color] duration-500 ease-in-out",
                     isActive
-                      ? "grow-[2.4] border-primary bg-gradient-to-br from-primary via-[#135a96] to-secondary text-white shadow-[0_18px_40px_rgba(15,76,129,0.25)]"
+                      ? "grow-[2.4] border-primary bg-gradient-to-br from-primary via-[#3065d4] to-secondary text-white shadow-[0_18px_40px_rgba(10,21,64,0.25)]"
                       : "glass grow text-foreground"
                   )}
                 >
@@ -176,7 +176,7 @@ export function Timeline({
                   className={cn(
                     "w-full rounded-[1.35rem] border p-4 text-left transition-[background-color,border-color,box-shadow,color] duration-500 ease-in-out",
                     isActive
-                      ? "border-primary bg-gradient-to-br from-primary to-secondary text-white shadow-[0_16px_40px_rgba(15,76,129,0.25)]"
+                      ? "border-primary bg-gradient-to-br from-primary to-secondary text-white shadow-[0_16px_40px_rgba(10,21,64,0.25)]"
                       : "glass text-foreground"
                   )}
                 >

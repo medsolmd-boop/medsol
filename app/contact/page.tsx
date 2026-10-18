@@ -93,7 +93,7 @@ export default function ContactPage() {
                       <div>
                         <p className="font-semibold text-foreground">Phone</p>
                         <a
-                          href={`tel:${siteConfig.phone}`}
+                          href={`tel:${siteConfig.phoneTel}`}
                           className="transition hover:text-primary"
                         >
                           {contactContent.details.phone}
@@ -122,7 +122,14 @@ export default function ContactPage() {
                       />
                       <div>
                         <p className="font-semibold text-foreground">Office</p>
-                        <p>{contactContent.details.address}</p>
+                        <a
+                          href={siteConfig.mapsUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="transition hover:text-primary"
+                        >
+                          {contactContent.details.address}
+                        </a>
                       </div>
                     </li>
                     <li className="flex items-start gap-3">
@@ -143,25 +150,13 @@ export default function ContactPage() {
                 </div>
 
                 <div className="glass overflow-hidden rounded-[1.5rem]">
-                  <div
-                    className="flex h-64 items-center justify-center bg-[linear-gradient(135deg,#e8f3fb_0%,#f4fbf9_100%)]"
-                    role="img"
-                    aria-label="Google Maps placeholder for medical billing company office location"
-                  >
-                    <div className="text-center">
-                      <MapPin
-                        className="mx-auto h-8 w-8 text-primary"
-                        aria-hidden="true"
-                      />
-                      <p className="mt-3 text-sm font-semibold text-foreground">
-                        Map Placeholder
-                      </p>
-                      <p className="mt-1 px-6 text-xs text-muted">
-                        Replace with your Google Maps embed once the office
-                        address is finalized.
-                      </p>
-                    </div>
-                  </div>
+                  <iframe
+                    title="MedSol office on Google Maps"
+                    src={`https://maps.google.com/maps?q=${encodeURIComponent(contactContent.details.address)}&z=16&output=embed`}
+                    className="h-64 w-full border-0"
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                  />
                 </div>
               </div>
             </FadeIn>

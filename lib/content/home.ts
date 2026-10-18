@@ -104,13 +104,13 @@ export const homeContent = {
   whoWeServe: {
     title: "Who We Serve",
     description:
-      "Independent physicians, specialty clinics, urgent care centers, behavioral health providers, and multi-provider practices. We tailor our billing, credentialing, and front-desk solutions to fit your workflow and growth goals.",
+      "Independent physicians, labs, hospitals, urgent care centers, dentists, and multi-provider groups. We tailor billing, credentialing, and front-desk support to each care setting.",
     industries: [
       "Independent Physicians",
-      "Specialty Clinics",
+      "Labs",
+      "Hospitals",
       "Urgent Care Centers",
-      "Behavioral Health",
-      "Multi-Location Practices",
+      "Dentists",
       "Multi-Provider Groups",
     ],
   },
@@ -158,6 +158,36 @@ export const homeContent = {
         "The virtual front desk team feels like an extension of our staff. Patients get answered calls, accurate scheduling, and smoother intake.",
       name: "Priya Nair",
       role: "Operations Director, Behavioral Health Group",
+    },
+    {
+      quote:
+        "Hospital claims used to stall between inpatient and outpatient billing. Their revenue cycle team cleaned up our edits and follow-up, and our AR days finally started falling.",
+      name: "Dr. Helen Okonkwo",
+      role: "Chief Medical Officer, Regional Hospital",
+    },
+    {
+      quote:
+        "Lab billing is full of payer-specific rules. They submit clean claims and stay on denials so our reference work actually gets paid.",
+      name: "James Whitfield",
+      role: "Billing Manager, Diagnostic Laboratory",
+    },
+    {
+      quote:
+        "Dental insurance follow-up used to eat our front desk. Patient balances are clearer now, and we spend the day on care instead of claim status calls.",
+      name: "Dr. Sofia Alvarez",
+      role: "Owner, Family Dental Practice",
+    },
+    {
+      quote:
+        "Urgent care volume spikes every evening. Charge capture stays accurate, and we are not chasing missing encounter details the next morning.",
+      name: "Andre Brooks",
+      role: "Director of Operations, Urgent Care Network",
+    },
+    {
+      quote:
+        "As a solo physician I could not hire a billing department. They handle credentialing and claims without adding staff, and I see exactly where every payment stands.",
+      name: "Dr. Naomi Patel",
+      role: "Independent Internal Medicine Physician",
     },
   ],
   faqs: [

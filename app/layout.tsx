@@ -3,6 +3,7 @@ import { Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import { siteConfig } from "@/lib/site-config";
 import { absoluteUrl } from "@/lib/utils";
+import { TopBar } from "@/components/layout/top-bar";
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
 import { FloatingCta } from "@/components/layout/floating-cta";
@@ -85,13 +86,14 @@ export default function RootLayout({
         <JsonLd data={healthcareBusinessSchema()} />
         <a
           href="#main-content"
-          className="glass-strong sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[100] focus:rounded-xl focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-primary"
+          className="glass-strong sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-[calc(var(--topbar-height)+0.75rem)] focus:z-[100] focus:rounded-xl focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-primary"
         >
           Skip to main content
         </a>
         <LenisProvider>
           <NavigationEffects />
           <ScrollProgress />
+          <TopBar />
           <Navbar />
           <main id="main-content">
             <PageTransition>{children}</PageTransition>

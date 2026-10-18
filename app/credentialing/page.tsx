@@ -67,7 +67,7 @@ export default function CredentialingPage() {
         >
           <ServiceArt
             variant="credentialing"
-            className="h-auto w-full drop-shadow-[0_24px_50px_rgba(15,76,129,0.12)]"
+            className="h-auto w-full drop-shadow-[0_24px_50px_rgba(10,21,64,0.12)]"
           />
         </HeroStatsOverlay>
       </PageHero>

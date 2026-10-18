@@ -6,7 +6,7 @@ import { HeroBackground } from "@/components/sections/hero-background";
 
 /** Shared photo-hero frame — matches Virtual Front Desk / service pages. */
 export const photoHeroSectionClassName =
-  "relative overflow-x-clip pb-10 pt-24 md:pb-14 md:pt-28";
+  "relative overflow-x-clip pb-10 pt-[calc(var(--navbar-height)+var(--topbar-height))] md:pb-14";
 
 /** Locked band height (Virtual Front Desk reference) so every page matches. */
 export const photoHeroBandClassName =

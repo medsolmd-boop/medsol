@@ -92,7 +92,7 @@ export default function HomePage() {
               },
             ].map((item) => (
               <StaggerItem key={item.label}>
-                <div className="group relative inline-flex cursor-default items-center gap-2.5 rounded-full border border-[rgba(27,58,87,0.08)] bg-[linear-gradient(165deg,rgba(255,255,255,0.92),rgba(244,246,248,0.78))] px-4 py-2.5 text-sm font-medium text-muted shadow-[0_1px_0_rgba(255,255,255,0.8)_inset,0_8px_20px_rgba(28,36,48,0.05)] transition-all duration-[400ms] ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-1 hover:border-primary/15 hover:bg-white hover:text-primary hover:shadow-[0_14px_28px_rgba(28,36,48,0.08)]">
+                <div className="group relative inline-flex cursor-default items-center gap-2.5 rounded-full border border-[rgba(10,21,64,0.08)] bg-[linear-gradient(165deg,rgba(255,255,255,0.92),rgba(244,246,248,0.78))] px-4 py-2.5 text-sm font-medium text-muted shadow-[0_1px_0_rgba(255,255,255,0.8)_inset,0_8px_20px_rgba(28,36,48,0.05)] transition-all duration-[400ms] ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-1 hover:border-primary/15 hover:bg-white hover:text-primary hover:shadow-[0_14px_28px_rgba(28,36,48,0.08)]">
                   <span
                     className={`relative flex h-8 w-8 shrink-0 items-center justify-center rounded-full transition-all duration-[400ms] group-hover:scale-105 group-hover:text-white ${item.tone}`}
                   >

@@ -8,7 +8,7 @@ import { navLinks, servicesMenuLinks, siteConfig } from "@/lib/site-config";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
-import { BrandLogo } from "@/components/brand-logo";
+import { BrandLogo, brandLogoWordmarkSize } from "@/components/brand-logo";
 
 function clamp(value: number, min = 0, max = 1) {
   return Math.min(max, Math.max(min, value));
@@ -33,10 +33,7 @@ export function Navbar() {
   const shellRef = useRef<HTMLDivElement>(null);
   const rowRef = useRef<HTMLDivElement>(null);
   const logoRef = useRef<HTMLSpanElement>(null);
-  const titleRef = useRef<HTMLSpanElement>(null);
   const ctaRef = useRef<HTMLAnchorElement>(null);
-  const ctaFullRef = useRef<HTMLSpanElement>(null);
-  const ctaShortRef = useRef<HTMLSpanElement>(null);
   const progressRef = useRef(0);
   const targetProgressRef = useRef(0);
   const openRef = useRef(false);
@@ -83,7 +80,6 @@ export function Navbar() {
       const shell = shellRef.current;
       const row = rowRef.current;
       const logo = logoRef.current;
-      const title = titleRef.current;
       const cta = ctaRef.current;
       if (!header || !shell || !row) return;
 
@@ -108,10 +104,9 @@ export function Navbar() {
         }
       }
 
-      const barHeight = 72 - p * (desktop ? 12 : 10);
-      const logoSize = 40 - p * 4;
-      const titleSize = 18 - p * 2.5;
-      const ctaHeight = 44 - p * 6;
+      const barHeight = 68 - p * (desktop ? 8 : 6);
+      const logoHeight = 40 - p * 4;
+      const ctaHeight = 36 - p * 4;
       const ctaPadX = 22 - p * 4;
       const showGlass = p > 0.02 || menuOpen;
 
@@ -125,13 +120,13 @@ export function Navbar() {
       shell.style.paddingRight = `${p * (desktop ? 10 : 6)}px`;
       shell.style.overflow = servicesOpen && desktop ? "visible" : "hidden";
       shell.style.boxShadow = showGlass
-        ? `0 ${10 + p * 8}px ${28 + p * 14}px rgba(15,76,129,${0.06 + p * 0.08})`
+        ? `0 ${10 + p * 8}px ${28 + p * 14}px rgba(10,21,64,${0.06 + p * 0.08})`
         : "none";
       shell.style.borderColor = showGlass
         ? `rgba(255,255,255,${0.55 + p * 0.2})`
         : "transparent";
       shell.style.background = showGlass
-        ? `radial-gradient(120% 90% at 0% 0%, rgba(74,168,255,${0.14 + p * 0.05}), transparent 54%), radial-gradient(90% 80% at 100% 100%, rgba(42,212,196,${0.11 + p * 0.04}), transparent 50%), linear-gradient(165deg, rgba(255,255,255,${0.7 + p * 0.12}), rgba(232,244,251,${0.64 + p * 0.12}))`
+        ? `radial-gradient(120% 90% at 0% 0%, rgba(48,101,212,${0.14 + p * 0.05}), transparent 54%), radial-gradient(90% 80% at 100% 100%, rgba(80,173,170,${0.11 + p * 0.04}), transparent 50%), linear-gradient(165deg, rgba(255,255,255,${0.7 + p * 0.12}), rgba(232,244,251,${0.64 + p * 0.12}))`
         : "transparent";
 
       if (lastGlass !== showGlass) {
@@ -144,21 +139,13 @@ export function Navbar() {
       row.style.height = `${barHeight}px`;
 
       if (logo) {
-        logo.style.width = `${logoSize}px`;
-        logo.style.height = `${logoSize}px`;
-      }
-      if (title) {
-        title.style.fontSize = `${titleSize}px`;
+        logo.style.height = `${logoHeight}px`;
+        logo.style.width = `${logoHeight * (brandLogoWordmarkSize.width / brandLogoWordmarkSize.height)}px`;
       }
       if (cta) {
         cta.style.height = `${ctaHeight}px`;
         cta.style.paddingLeft = `${ctaPadX}px`;
         cta.style.paddingRight = `${ctaPadX}px`;
-      }
-      if (ctaFullRef.current && ctaShortRef.current) {
-        const fade = clamp((p - 0.42) / 0.28);
-        ctaFullRef.current.style.opacity = String(1 - fade);
-        ctaShortRef.current.style.opacity = String(fade);
       }
     };
 
@@ -256,11 +243,11 @@ export function Navbar() {
 
   const linkClass = (active: boolean) =>
     cn(
-      "inline-flex h-9 items-center justify-center whitespace-nowrap rounded-full px-3 text-sm font-medium leading-none transition-[background-color,color,box-shadow,padding,font-size] duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]",
-      pill && "h-8 px-2.5 text-[13px]",
+      "inline-flex h-9 items-center justify-center whitespace-nowrap rounded-full px-2 text-sm font-medium leading-none transition-[background-color,color,box-shadow,padding,font-size] duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]",
+      pill && "h-8 px-1.5 text-[13px]",
       active
         ? pill
-          ? "bg-primary text-white shadow-[0_6px_16px_rgba(15,76,129,0.22)]"
+          ? "bg-primary text-white shadow-[0_6px_16px_rgba(10,21,64,0.22)]"
           : "bg-primary/5 text-primary"
         : "text-muted hover:bg-white/70 hover:text-primary"
     );
@@ -274,7 +261,7 @@ export function Navbar() {
   return (
     <header
       ref={headerRef}
-      className="pointer-events-none fixed inset-x-0 top-0 z-50 nav-enter"
+      className="pointer-events-none fixed inset-x-0 top-[var(--topbar-height)] z-50 nav-enter"
       style={{ paddingLeft: 0, paddingRight: 0, paddingTop: 0 }}
     >
       <div
@@ -292,10 +279,10 @@ export function Navbar() {
         <Container
           ref={rowRef}
           className={cn(
-            "grid grid-cols-[1fr_auto] items-center gap-3 lg:grid-cols-[1fr_auto_1fr]",
+            "grid grid-cols-[1fr_auto] items-center gap-3 lg:grid-cols-[auto_minmax(0,1fr)_auto] lg:gap-x-6",
             pill && "max-w-none !px-2 md:!px-3"
           )}
-          style={{ height: 72 }}
+          style={{ height: 68 }}
         >
           <Link
             href="/"
@@ -304,23 +291,18 @@ export function Navbar() {
           >
             <span
               ref={logoRef}
-              className="relative flex h-10 w-10 shrink-0 items-center justify-center overflow-hidden transition-transform duration-300 group-hover:scale-105"
+              className="relative flex h-10 shrink-0 items-center transition-transform duration-300 group-hover:scale-[1.02]"
+              style={{
+                width:
+                  40 * (brandLogoWordmarkSize.width / brandLogoWordmarkSize.height),
+              }}
             >
-              <BrandLogo alt="" priority className="scale-[1.08]" />
-            </span>
-            <span
-              ref={titleRef}
-              className={cn(
-                "font-bold tracking-tight text-primary",
-                pill ? "max-w-[9rem] truncate sm:max-w-none" : "truncate"
-              )}
-            >
-              {siteConfig.name}
+              <BrandLogo alt="" priority variant="wordmark" />
             </span>
           </Link>
 
           <nav
-            className="hidden items-center justify-center gap-0.5 justify-self-center lg:flex"
+            className="hidden items-center justify-center gap-0.5 justify-self-center lg:flex lg:pl-4"
             aria-label="Primary navigation"
           >
             {linksBeforeServices.map((link) => {
@@ -363,7 +345,7 @@ export function Navbar() {
               {servicesOpen ? (
                 <div
                   role="menu"
-                  className="absolute left-1/2 top-[calc(100%+0.55rem)] z-[60] w-64 -translate-x-1/2 rounded-2xl border border-white/70 bg-white/95 p-2 shadow-[0_18px_40px_rgba(15,76,129,0.14)] backdrop-blur-xl"
+                  className="absolute left-1/2 top-[calc(100%+0.55rem)] z-[60] w-64 -translate-x-1/2 rounded-2xl border border-white/70 bg-white/95 p-2 shadow-[0_18px_40px_rgba(10,21,64,0.14)] backdrop-blur-xl"
                 >
                   {servicesMenuLinks.map((link) => {
                     const active = pathname.startsWith(link.href);
@@ -412,18 +394,9 @@ export function Navbar() {
               <Link
                 ref={ctaRef}
                 href="/contact"
-                className="relative inline-flex items-center justify-center"
+                className="inline-flex items-center justify-center whitespace-nowrap"
               >
-                <span ref={ctaFullRef} className="whitespace-nowrap">
-                  {siteConfig.cta.primary}
-                </span>
-                <span
-                  ref={ctaShortRef}
-                  className="pointer-events-none absolute inset-0 flex items-center justify-center whitespace-nowrap opacity-0"
-                  aria-hidden="true"
-                >
-                  Book a Call
-                </span>
+                Contact Us
               </Link>
             </Button>
           </div>
@@ -551,7 +524,7 @@ export function Navbar() {
               </nav>
               <Button asChild className="mt-3 w-full rounded-full">
                 <Link href="/contact" onClick={() => setOpen(false)}>
-                  {siteConfig.cta.primary}
+                  Contact Us
                 </Link>
               </Button>
             </div>

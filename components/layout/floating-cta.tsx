@@ -1,8 +1,7 @@
 "use client";
 
-import Link from "next/link";
 import { useEffect, useState } from "react";
-import { ArrowUp, MessageCircle } from "lucide-react";
+import { ArrowUp } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 export function FloatingCta() {
@@ -51,14 +50,6 @@ export function FloatingCta() {
       >
         <ArrowUp className="h-4 w-4" />
       </button>
-      <Link
-        href="/contact"
-        className="inline-flex items-center gap-2 rounded-2xl bg-accent px-4 py-3 text-sm font-semibold text-white shadow-[0_14px_34px_rgba(42,212,196,0.4)] transition hover:-translate-y-0.5 hover:brightness-110"
-        aria-label="Contact us"
-      >
-        <MessageCircle className="h-4 w-4" aria-hidden="true" />
-        Contact
-      </Link>
     </div>
   );
 }

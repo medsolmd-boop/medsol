@@ -106,24 +106,24 @@ export function Testimonials({
                 >
                   <figure
                     className={cn(
-                      "gradient-border flex h-full flex-col rounded-[1.5rem] p-7 md:p-8",
-                      "shadow-[0_12px_40px_rgba(15,76,129,0.08)]",
+                      "gradient-border flex h-full flex-col overflow-hidden rounded-[1.5rem]",
+                      "shadow-[0_12px_40px_rgba(10,21,64,0.08)]",
                       "transition-[transform,box-shadow,background-color] duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]",
                       "will-change-transform",
                       "hover:-translate-y-2",
-                      "hover:shadow-[0_22px_56px_rgba(15,76,129,0.18),0_0_0_1px_rgba(46,196,182,0.35),0_0_36px_rgba(46,196,182,0.45),0_0_64px_rgba(30,136,229,0.28)]"
+                      "hover:shadow-[0_22px_56px_rgba(10,21,64,0.18),0_0_0_1px_rgba(80,173,170,0.35),0_0_36px_rgba(80,173,170,0.45),0_0_64px_rgba(48,101,212,0.28)]"
                     )}
                   >
                     <Quote
-                      className="h-8 w-8 text-accent"
+                      className="mx-7 mt-7 h-8 w-8 text-accent md:mx-8 md:mt-8"
                       aria-hidden="true"
                     />
-                    <blockquote className="mt-4 flex-1 text-base leading-relaxed text-foreground md:text-lg">
+                    <blockquote className="mx-7 mt-4 flex-1 text-base leading-relaxed text-foreground md:mx-8 md:text-lg">
                       “{item.quote}”
                     </blockquote>
-                    <figcaption className="mt-6 border-t border-border pt-4">
-                      <p className="font-semibold text-primary">{item.name}</p>
-                      <p className="text-sm text-muted">{item.role}</p>
+                    <figcaption className="mt-6 bg-primary px-7 py-4 md:px-8">
+                      <p className="font-semibold text-white">{item.name}</p>
+                      <p className="text-sm text-white/75">{item.role}</p>
                     </figcaption>
                   </figure>
                 </div>

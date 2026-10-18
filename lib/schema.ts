@@ -17,7 +17,7 @@ export function organizationSchema() {
     url: absoluteUrl("/"),
     logo: absoluteUrl("/logo.png"),
     email: siteConfig.email,
-    ...(phone ? { telephone: phone } : {}),
+    ...(phone ? { telephone: siteConfig.phoneTel } : {}),
     address: {
       "@type": "PostalAddress",
       streetAddress: siteConfig.address.street,
@@ -46,7 +46,7 @@ export function healthcareBusinessSchema() {
     name: siteConfig.name,
     description: siteConfig.description,
     url: absoluteUrl("/"),
-    ...(phone ? { telephone: phone } : {}),
+    ...(phone ? { telephone: siteConfig.phoneTel } : {}),
     email: siteConfig.email,
     image: absoluteUrl("/og-image.png"),
     address: {
@@ -84,7 +84,7 @@ export function contactPageSchema() {
       name: siteConfig.name,
       email: siteConfig.email,
       ...(siteConfig.phone && !siteConfig.phone.includes("[")
-        ? { telephone: siteConfig.phone }
+        ? { telephone: siteConfig.phoneTel }
         : {}),
     },
   };

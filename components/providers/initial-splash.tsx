@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { siteConfig } from "@/lib/site-config";
 
 const MIN_MS = 1100;
 const FADE_MS = 420;
@@ -75,12 +74,11 @@ export function InitialSplash() {
           <img
             src="/logo.png"
             alt=""
-            width={64}
-            height={57}
+            width={1199}
+            height={331}
             className="site-splash-logo"
             decoding="async"
           />
-          <p className="site-splash-wordmark">{siteConfig.name}</p>
         </div>
       </div>
     </div>

@@ -38,7 +38,7 @@ export function HeroBackground({
       <div className={`absolute inset-0 bg-gradient-to-r ${veil}`} />
       <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-transparent to-black/35" />
       {/* Soft brand wash — muted, not neon */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_60%_at_12%_45%,rgba(27,58,87,0.45),transparent_58%),radial-gradient(ellipse_50%_45%_at_92%_18%,rgba(58,168,156,0.12),transparent_55%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_60%_at_12%_45%,rgba(10,21,64,0.45),transparent_58%),radial-gradient(ellipse_50%_45%_at_92%_18%,rgba(80,173,170,0.12),transparent_55%)]" />
     </div>
   );
 }

@@ -14,6 +14,7 @@ import "./accordion-gallery.css";
 export type AccordionGalleryItem = {
   image: string;
   label?: string;
+  description?: string;
   alt?: string;
 };
 
@@ -41,29 +42,41 @@ type AccordionGalleryProps = {
 
 const DEFAULT_ITEMS: AccordionGalleryItem[] = [
   {
-    image:
-      "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=1200&q=80",
+    image: "/independent-physician.jpg",
     label: "Independent Physicians",
+    description:
+      "Billing and credentialing for solo and small practices, without adding staff.",
   },
   {
-    image:
-      "https://images.unsplash.com/photo-1600880292089-90a7e086ee0c?auto=format&fit=crop&w=1200&q=80",
-    label: "Specialty Clinics",
+    image: "/serve-lab.jpg",
+    label: "Labs",
+    description:
+      "Claim submission and payer follow-up for diagnostic and reference laboratories.",
   },
   {
-    image:
-      "https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1400&q=80",
-    label: "Urgent Care",
+    image: "/serve-hospital.jpg",
+    label: "Hospitals",
+    description:
+      "Revenue cycle support for inpatient and outpatient hospital claims.",
+    alt: "Large modern hospital building exterior",
   },
   {
-    image:
-      "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=1200&q=80",
-    label: "Behavioral Health",
+    image: "/serve-urgent-care.jpg",
+    label: "Urgent Care Centers",
+    description:
+      "High-volume charge capture and clean claims for walk-in visits.",
   },
   {
-    image:
-      "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=1200&q=80",
+    image: "/serve-dentist.jpg",
+    label: "Dentists",
+    description:
+      "Dental insurance billing, claim follow-up, and patient balances.",
+  },
+  {
+    image: "/serve-multi-provider.jpg",
     label: "Multi-Provider Groups",
+    description:
+      "Shared billing across multiple clinicians, specialties, and locations.",
   },
 ];
 
@@ -76,7 +89,7 @@ export function AccordionGallery({
   items = DEFAULT_ITEMS,
   defaultIndex = 2,
   accentColor = "#2ec4b6",
-  overlayColor = "#0a365c",
+  overlayColor = "#020837",
   textColor = "#ffffff",
   height = 460,
   gap = 10,
@@ -329,7 +342,7 @@ export function AccordionGallery({
               aria-current={isActive ? "true" : undefined}
               aria-label={
                 item.label
-                  ? `${item.label}${isActive ? "" : ". Expand"}`
+                  ? `${item.label}${item.description ? `. ${item.description}` : ""}${isActive ? "" : " Expand"}`
                   : undefined
               }
             >
@@ -364,7 +377,10 @@ export function AccordionGallery({
                       textRefs.current[i] = el;
                     }}
                   >
-                    {item.label}
+                    <span className="ag-panel__name">{item.label}</span>
+                    {item.description ? (
+                      <span className="ag-panel__desc">{item.description}</span>
+                    ) : null}
                   </span>
                 </span>
               ) : null}

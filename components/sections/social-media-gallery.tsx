@@ -57,7 +57,7 @@ export function SocialMediaGallery() {
             gap={12}
             radius={24}
             accentColor="#2ec4b6"
-            overlayColor="#0a365c"
+            overlayColor="#020837"
             textColor="#ffffff"
             grayscale
             showLabels

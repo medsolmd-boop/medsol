@@ -3,7 +3,7 @@ import { Mail, MapPin, Phone } from "lucide-react";
 import { navLinks, serviceLinks, siteConfig } from "@/lib/site-config";
 import { Container } from "@/components/ui/container";
 import { NewsletterForm } from "@/components/sections/newsletter-form";
-import { BrandLogo } from "@/components/brand-logo";
+import { BrandLogo, brandLogoSize } from "@/components/brand-logo";
 
 export function Footer() {
   const year = new Date().getFullYear();
@@ -13,12 +13,14 @@ export function Footer() {
       <Container className="py-10 md:py-14">
         <div className="grid gap-12 lg:grid-cols-[1.2fr_1fr_1fr_1.1fr]">
           <div>
-            <Link href="/" className="inline-flex items-center gap-2.5">
-              <span className="relative flex h-10 w-10 items-center justify-center overflow-hidden">
-                <BrandLogo alt="" className="scale-[1.08]" />
-              </span>
-              <span className="text-lg font-bold text-primary">
-                {siteConfig.name}
+            <Link href="/" aria-label={siteConfig.name} className="inline-flex">
+              <span
+                className="relative flex h-16 items-center"
+                style={{
+                  width: 64 * (brandLogoSize.width / brandLogoSize.height),
+                }}
+              >
+                <BrandLogo alt="" />
               </span>
             </Link>
             <p className="mt-4 max-w-sm text-sm leading-relaxed text-muted">
@@ -28,7 +30,7 @@ export function Footer() {
             </p>
             <div className="mt-6 space-y-3 text-sm text-muted">
               <a
-                href={`tel:${siteConfig.phone}`}
+                href={`tel:${siteConfig.phoneTel}`}
                 className="flex items-center gap-2 transition-colors hover:text-primary"
               >
                 <Phone className="h-4 w-4 text-secondary" aria-hidden="true" />
@@ -41,7 +43,12 @@ export function Footer() {
                 <Mail className="h-4 w-4 text-secondary" aria-hidden="true" />
                 {siteConfig.email}
               </a>
-              <p className="flex items-start gap-2">
+              <a
+                href={siteConfig.mapsUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-start gap-2 transition-colors hover:text-primary"
+              >
                 <MapPin
                   className="mt-0.5 h-4 w-4 shrink-0 text-secondary"
                   aria-hidden="true"
@@ -52,7 +59,7 @@ export function Footer() {
                   {siteConfig.address.city}, {siteConfig.address.state}{" "}
                   {siteConfig.address.zip}
                 </span>
-              </p>
+              </a>
             </div>
           </div>
 
@@ -127,8 +134,15 @@ export function Footer() {
             © {year} {siteConfig.name}. All rights reserved.
           </p>
           <p className="text-xs md:text-sm">
-            NAP: {siteConfig.name} · {siteConfig.address.city},{" "}
-            {siteConfig.address.state} · {siteConfig.phone}
+            Powered by{" "}
+            <a
+              href={siteConfig.credit.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-semibold text-primary transition-colors hover:text-secondary"
+            >
+              {siteConfig.credit.name}
+            </a>
           </p>
         </div>
       </Container>

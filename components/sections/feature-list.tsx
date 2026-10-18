@@ -219,7 +219,7 @@ export function FeatureList({
                             damping: 24,
                           }}
                           className={cn(
-                            "glass group flex h-full min-h-[5.25rem] w-full items-center gap-3 rounded-2xl px-4 py-4 text-left transition-[border-color,box-shadow,transform] duration-300 hover:-translate-y-1 hover:border-secondary/45 hover:shadow-[0_14px_32px_rgba(15,76,129,0.12)]"
+                            "glass group flex h-full min-h-[5.25rem] w-full items-center gap-3 rounded-2xl px-4 py-4 text-left transition-[border-color,box-shadow,transform] duration-300 hover:-translate-y-1 hover:border-secondary/45 hover:shadow-[0_14px_32px_rgba(10,21,64,0.12)]"
                           )}
                         >
                           {content}
@@ -227,7 +227,7 @@ export function FeatureList({
                       ) : (
                         <div
                           key={item.title}
-                          className="glass group flex h-full min-h-[5.25rem] items-center gap-3 rounded-2xl px-4 py-4 transition duration-300 hover:-translate-y-1 hover:border-secondary/45 hover:shadow-[0_14px_32px_rgba(15,76,129,0.12)]"
+                          className="glass group flex h-full min-h-[5.25rem] items-center gap-3 rounded-2xl px-4 py-4 transition duration-300 hover:-translate-y-1 hover:border-secondary/45 hover:shadow-[0_14px_32px_rgba(10,21,64,0.12)]"
                         >
                           {content}
                         </div>

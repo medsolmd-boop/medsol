@@ -15,27 +15,27 @@ export function HealthcareHeroIllustration({
       >
         <defs>
           <linearGradient id="hg1" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0%" stopColor="#3d6f99" stopOpacity="0.16" />
-            <stop offset="100%" stopColor="#3aa89c" stopOpacity="0.2" />
+            <stop offset="0%" stopColor="#3065d4" stopOpacity="0.16" />
+            <stop offset="100%" stopColor="#50adaa" stopOpacity="0.2" />
           </linearGradient>
           <linearGradient id="hg2" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stopColor="#1b3a57" />
-            <stop offset="100%" stopColor="#3d6f99" />
+            <stop offset="0%" stopColor="#0a1540" />
+            <stop offset="100%" stopColor="#3065d4" />
           </linearGradient>
           <filter id="soft" x="-20%" y="-20%" width="140%" height="140%">
             <feDropShadow
               dx="0"
               dy="18"
               stdDeviation="18"
-              floodColor="#1b3a57"
+              floodColor="#0a1540"
               floodOpacity="0.1"
             />
           </filter>
         </defs>
 
         <circle cx="280" cy="240" r="210" fill="url(#hg1)" />
-        <circle cx="420" cy="110" r="48" fill="#3aa89c" fillOpacity="0.14" />
-        <circle cx="120" cy="360" r="36" fill="#3d6f99" fillOpacity="0.12" />
+        <circle cx="420" cy="110" r="48" fill="#50adaa" fillOpacity="0.14" />
+        <circle cx="120" cy="360" r="36" fill="#3065d4" fillOpacity="0.12" />
 
         <g filter="url(#soft)">
           <rect
@@ -47,7 +47,7 @@ export function HealthcareHeroIllustration({
             fill="white"
             stroke="#E5E7EB"
           />
-          <rect x="112" y="128" width="120" height="14" rx="7" fill="#1b3a57" />
+          <rect x="112" y="128" width="120" height="14" rx="7" fill="#0a1540" />
           <rect
             x="112"
             y="156"
@@ -70,7 +70,7 @@ export function HealthcareHeroIllustration({
           <text
             x="128"
             y="254"
-            fill="#1b3a57"
+            fill="#0a1540"
             fontSize="16"
             fontFamily="system-ui,sans-serif"
             fontWeight="700"
@@ -80,7 +80,7 @@ export function HealthcareHeroIllustration({
           <text
             x="212"
             y="254"
-            fill="#1b3a57"
+            fill="#0a1540"
             fontSize="16"
             fontFamily="system-ui,sans-serif"
             fontWeight="700"
@@ -90,7 +90,7 @@ export function HealthcareHeroIllustration({
           <text
             x="296"
             y="254"
-            fill="#1b3a57"
+            fill="#0a1540"
             fontSize="16"
             fontFamily="system-ui,sans-serif"
             fontWeight="700"
@@ -124,7 +124,7 @@ export function HealthcareHeroIllustration({
             width="90"
             height="10"
             rx="5"
-            fill="#1b3a57"
+            fill="#0a1540"
           />
           <rect
             x="384"
@@ -140,7 +140,7 @@ export function HealthcareHeroIllustration({
             width="140"
             height="28"
             rx="14"
-            fill="#3aa89c"
+            fill="#50adaa"
           />
           <text
             x="364"
@@ -164,7 +164,7 @@ export function HealthcareHeroIllustration({
             fill="white"
             stroke="#E5E7EB"
           />
-          <rect x="92" y="324" width="48" height="8" rx="4" fill="#3d6f99" />
+          <rect x="92" y="324" width="48" height="8" rx="4" fill="#3065d4" />
           <rect x="92" y="344" width="116" height="6" rx="3" fill="#E5E7EB" />
           <rect x="92" y="360" width="90" height="6" rx="3" fill="#E5E7EB" />
         </g>

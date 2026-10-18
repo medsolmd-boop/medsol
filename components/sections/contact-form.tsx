@@ -11,27 +11,21 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { contactContent } from "@/lib/content/contact";
+import { siteConfig } from "@/lib/site-config";
+import { contactInquirySchema } from "@/lib/validations/contact";
 
-const contactSchema = z.object({
-  name: z.string().min(2, "Please enter your full name"),
-  practiceName: z.string().min(2, "Please enter your practice name"),
-  email: z.string().email("Enter a valid email address"),
-  phone: z.string().min(7, "Enter a valid phone number"),
-  service: z.string().min(1, "Select a service"),
-  message: z.string().min(10, "Please share a bit more detail"),
-});
-
-type ContactFormValues = z.infer<typeof contactSchema>;
+type ContactFormValues = z.infer<typeof contactInquirySchema>;
 
 export function ContactForm() {
   const [success, setSuccess] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
   const {
     register,
     handleSubmit,
     reset,
     formState: { errors, isSubmitting },
   } = useForm<ContactFormValues>({
-    resolver: zodResolver(contactSchema),
+    resolver: zodResolver(contactInquirySchema),
     defaultValues: {
       name: "",
       practiceName: "",
@@ -42,10 +36,35 @@ export function ContactForm() {
     },
   });
 
-  const onSubmit = async () => {
-    await new Promise((resolve) => setTimeout(resolve, 900));
-    setSuccess(true);
-    reset();
+  const onSubmit = async (values: ContactFormValues) => {
+    setSubmitError(null);
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(values),
+      });
+      const data = (await response.json().catch(() => null)) as {
+        ok?: boolean;
+        error?: string;
+      } | null;
+
+      if (!response.ok || !data?.ok) {
+        setSubmitError(
+          data?.error ||
+            `We couldn't send your inquiry. Please email ${siteConfig.email} or call ${siteConfig.phone}.`
+        );
+        return;
+      }
+
+      setSuccess(true);
+      reset();
+    } catch {
+      setSubmitError(
+        `We couldn't send your inquiry. Please email ${siteConfig.email} or call ${siteConfig.phone}.`
+      );
+    }
   };
 
   return (
@@ -144,7 +163,6 @@ export function ContactForm() {
                 id="service"
                 className="glass-strong flex h-12 w-full rounded-2xl px-4 text-sm text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary/40"
                 aria-invalid={!!errors.service}
-                defaultValue=""
                 {...register("service")}
               >
                 <option value="" disabled>
@@ -165,6 +183,12 @@ export function ContactForm() {
                 {...register("message")}
               />
             </Field>
+
+            {submitError ? (
+              <p className="text-sm font-medium text-red-600" role="alert">
+                {submitError}
+              </p>
+            ) : null}
 
             <Button
               type="submit"

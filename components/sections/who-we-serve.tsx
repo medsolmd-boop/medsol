@@ -8,34 +8,46 @@ import { AccordionGallery } from "@/components/ui/accordion-gallery";
 
 const audienceItems = [
   {
-    image:
-      "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=1400&q=80",
+    image: "/independent-physician.jpg",
     label: "Independent Physicians",
-    alt: "Independent practice owner reviewing operations in a professional office",
+    description:
+      "Billing and credentialing for solo and small practices, without adding staff.",
+    alt: "Independent physician reviewing a patient chart",
   },
   {
-    image:
-      "https://images.unsplash.com/photo-1600880292089-90a7e086ee0c?auto=format&fit=crop&w=1400&q=80",
-    label: "Specialty Clinics",
-    alt: "Specialty clinic leadership collaborating in a modern office",
+    image: "/serve-lab.jpg",
+    label: "Labs",
+    description:
+      "Claim submission and payer follow-up for diagnostic and reference laboratories.",
+    alt: "Laboratory scientist working with clinical analyzers",
   },
   {
-    image:
-      "https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1400&q=80",
+    image: "/serve-hospital.jpg",
+    label: "Hospitals",
+    description:
+      "Revenue cycle support for inpatient and outpatient hospital claims.",
+    alt: "Large modern hospital building exterior",
+  },
+  {
+    image: "/serve-urgent-care.jpg",
     label: "Urgent Care Centers",
-    alt: "Multi-location urgent care operations office for outsourced billing support",
+    description:
+      "High-volume charge capture and clean claims for walk-in visits.",
+    alt: "Clinician checking a patient's blood pressure during an urgent care visit",
   },
   {
-    image:
-      "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=1400&q=80",
-    label: "Behavioral Health",
-    alt: "Behavioral health practice administrator in a calm professional workspace",
+    image: "/serve-dentist.jpg",
+    label: "Dentists",
+    description:
+      "Dental insurance billing, claim follow-up, and patient balances.",
+    alt: "Dentist examining a patient in a dental chair",
   },
   {
-    image:
-      "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=1400&q=80",
+    image: "/serve-multi-provider.jpg",
     label: "Multi-Provider Groups",
-    alt: "Multi-provider group leadership meeting on revenue operations",
+    description:
+      "Shared billing across multiple clinicians, specialties, and locations.",
+    alt: "Multi-provider clinical team standing together",
   },
 ];
 
@@ -56,14 +68,14 @@ export function WhoWeServe({ title, description }: WhoWeServeProps) {
         <FadeIn delay={0.08} className="mt-8 md:mt-10">
           <AccordionGallery
             items={audienceItems}
-            defaultIndex={1}
+            defaultIndex={0}
             expandRatio={0.5}
             trigger="auto"
             height={440}
             gap={12}
             radius={24}
-            accentColor="#3aa89c"
-            overlayColor="#1b3a57"
+            accentColor="#50adaa"
+            overlayColor="#0a1540"
             textColor="#ffffff"
             grayscale
             showLabels

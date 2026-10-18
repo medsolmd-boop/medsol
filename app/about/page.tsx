@@ -75,7 +75,7 @@ export default function AboutPage() {
         >
           <ServiceArt
             variant="about"
-            className="h-auto w-full drop-shadow-[0_24px_50px_rgba(15,76,129,0.12)]"
+            className="h-auto w-full drop-shadow-[0_24px_50px_rgba(10,21,64,0.12)]"
           />
         </HeroStatsOverlay>
       </PageHero>
@@ -118,7 +118,7 @@ export default function AboutPage() {
             </FadeIn>
             <FadeIn delay={0.1}>
               <div className="glass h-full rounded-[1.75rem] p-8">
-                <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-accent text-white">
+                <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-accent text-primary">
                   <Eye className="h-5 w-5" aria-hidden="true" />
                 </span>
                 <h2 className="mt-5 text-2xl font-bold text-foreground">
@@ -183,7 +183,7 @@ export default function AboutPage() {
               return (
                 <StaggerItem key={member.name}>
                   <div className="glass h-full rounded-[1.5rem] p-7">
-                    <span className="flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-primary to-secondary text-white shadow-[0_10px_24px_rgba(15,76,129,0.22)]">
+                    <span className="flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-primary to-secondary text-white shadow-[0_10px_24px_rgba(10,21,64,0.22)]">
                       <Icon className="h-6 w-6" aria-hidden="true" />
                     </span>
                     <h3 className="mt-5 text-lg font-bold text-foreground">

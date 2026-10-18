@@ -51,13 +51,13 @@ export default function HomePage() {
       >
         <div className="relative">
           <HealthcareHeroIllustration />
-          <div className="glass-strong absolute -left-2 bottom-8 hidden rounded-2xl px-4 py-3 md:block">
+          <div className="glass-strong absolute -left-2 bottom-8 hidden rounded-2xl px-4 py-3 lg:block">
             <p className="text-xs font-semibold uppercase tracking-wider text-muted">
               Clean Claim Rate
             </p>
             <p className="text-2xl font-bold text-primary">98%</p>
           </div>
-          <div className="glass-strong absolute -right-2 top-10 hidden rounded-2xl px-4 py-3 md:block">
+          <div className="glass-strong absolute -right-2 top-10 hidden rounded-2xl px-4 py-3 lg:block">
             <p className="text-xs font-semibold uppercase tracking-wider text-muted">
               Collection Lift
             </p>

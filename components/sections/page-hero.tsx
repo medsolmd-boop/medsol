@@ -42,7 +42,7 @@ export function PageHero({
       {eyebrow ? (
         <FadeIn immediate>
           <p
-            className={`mb-4 text-[0.72rem] font-semibold uppercase tracking-[0.2em] ${
+            className={`mb-4 text-[0.72rem] font-semibold uppercase tracking-[0.2em] lg:text-left ${
               hasPhoto ? "text-accent" : "text-secondary"
             }`}
           >
@@ -52,7 +52,7 @@ export function PageHero({
       ) : null}
       <FadeIn immediate delay={0.08}>
         <h1
-          className={`max-w-3xl text-balance text-4xl font-bold tracking-tight md:text-5xl lg:text-[3.2rem] lg:leading-[1.1] ${
+          className={`mx-auto max-w-3xl text-balance text-[1.65rem] font-bold leading-[1.15] tracking-tight min-[380px]:text-[1.85rem] sm:text-4xl md:text-5xl lg:mx-0 lg:text-[3.2rem] lg:leading-[1.1] ${
             hasPhoto ? "text-white" : "text-foreground lg:text-[3.35rem]"
           }`}
         >
@@ -61,7 +61,7 @@ export function PageHero({
       </FadeIn>
       <FadeIn immediate delay={0.16}>
         <p
-          className={`mt-6 max-w-2xl text-base leading-relaxed md:text-lg ${
+          className={`mx-auto mt-6 max-w-2xl text-base leading-relaxed md:text-lg lg:mx-0 ${
             hasPhoto ? "text-white/80" : "text-muted"
           }`}
         >
@@ -71,12 +71,16 @@ export function PageHero({
       <FadeIn
         immediate
         delay={0.24}
-        className="mt-8 flex flex-col gap-3 sm:flex-row"
+        className="mt-8 flex flex-col items-center gap-3 sm:flex-row sm:flex-wrap sm:justify-center lg:justify-start"
       >
-        <Button asChild size="lg" className="rounded-full">
+        <Button
+          asChild
+          size="lg"
+          className="h-auto min-h-12 w-full whitespace-normal rounded-full px-5 py-3 text-center leading-snug sm:w-auto sm:min-h-14"
+        >
           <Link href={primaryHref}>
             {primaryCta}
-            <ArrowRight className="h-4 w-4" aria-hidden="true" />
+            <ArrowRight className="h-4 w-4 shrink-0" aria-hidden="true" />
           </Link>
         </Button>
         {secondaryCta ? (
@@ -86,8 +90,8 @@ export function PageHero({
             variant="outline"
             className={
               hasPhoto
-                ? "rounded-full border-white/45 bg-white/85 text-black hover:border-white hover:bg-white hover:text-black"
-                : "rounded-full"
+                ? "h-auto min-h-12 w-full whitespace-normal rounded-full border-white/45 bg-white/85 px-5 py-3 text-center leading-snug text-black hover:border-white hover:bg-white hover:text-black sm:w-auto sm:min-h-14"
+                : "h-auto min-h-12 w-full whitespace-normal rounded-full px-5 py-3 text-center leading-snug sm:w-auto sm:min-h-14"
             }
           >
             <Link href={secondaryHref}>{secondaryCta}</Link>
@@ -105,13 +109,13 @@ export function PageHero({
         intensity="strong"
         breadcrumb={breadcrumb}
       >
-        <div className="grid items-center gap-10 lg:grid-cols-[1.15fr_0.85fr] lg:gap-12">
+        <div className="grid items-center gap-10 text-center lg:grid-cols-[1.15fr_0.85fr] lg:gap-12 lg:text-left">
           <div>{copy}</div>
           {children ? (
             <FadeIn
               immediate
               delay={0.2}
-              className="relative z-[1] overflow-visible px-1 sm:px-2 lg:px-4"
+              className="relative z-[1] mx-auto w-full max-w-md overflow-visible px-1 sm:px-2 lg:mx-0 lg:max-w-none lg:px-4"
             >
               {children}
             </FadeIn>
@@ -128,7 +132,7 @@ export function PageHero({
       <Container className="relative z-[2]">
         {breadcrumb ? (
           <nav aria-label="Breadcrumb" className="mb-4">
-            <ol className="inline-flex flex-wrap items-center gap-1.5 text-sm text-muted">
+            <ol className="inline-flex flex-wrap items-center justify-center gap-1.5 text-sm text-muted lg:justify-start">
               <li>
                 <Link href="/" className="transition-colors hover:text-primary">
                   Home
@@ -147,13 +151,13 @@ export function PageHero({
           </nav>
         ) : null}
 
-        <div className="grid items-center gap-12 lg:grid-cols-[1.15fr_0.85fr]">
+        <div className="grid items-center gap-12 text-center lg:grid-cols-[1.15fr_0.85fr] lg:text-left">
           <div>{copy}</div>
           {children ? (
             <FadeIn
               immediate
               delay={0.2}
-              className="relative z-[1] overflow-visible px-2 sm:px-4 lg:px-6"
+              className="relative z-[1] mx-auto w-full max-w-md overflow-visible px-2 sm:px-4 lg:mx-0 lg:max-w-none lg:px-6"
             >
               {children}
             </FadeIn>

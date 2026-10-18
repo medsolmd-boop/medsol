@@ -88,7 +88,7 @@ export function ServiceCards({
               >
                 <Link
                   href={service.href}
-                  className={`glass group flex h-full flex-col rounded-[1.5rem] p-7 transition-all duration-300 hover:-translate-y-1.5 hover:border-accent/35 hover:shadow-[0_20px_50px_rgba(80,173,170,0.14)] md:p-8 ${
+                  className={`glass group flex h-full flex-col items-center rounded-[1.5rem] p-7 text-center transition-all duration-300 hover:-translate-y-1.5 hover:border-accent/35 hover:shadow-[0_20px_50px_rgba(80,173,170,0.14)] md:items-start md:p-8 md:text-left ${
                     aloneOnMd ? "md:w-[calc(50%-0.75rem)] xl:w-full" : ""
                   }`}
                 >
@@ -103,7 +103,7 @@ export function ServiceCards({
                   <p className="mt-3 flex-1 text-sm leading-relaxed text-muted md:text-[15px]">
                     {service.description}
                   </p>
-                  <span className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-secondary">
+                  <span className="mt-6 inline-flex items-center justify-center gap-2 text-sm font-semibold text-secondary md:justify-start">
                     Learn more
                     <ArrowRight
                       className="h-4 w-4 transition-transform group-hover:translate-x-1"

@@ -12,8 +12,8 @@ export function Footer() {
     <footer className="section-surface border-t">
       <Container className="py-10 md:py-14">
         <div className="grid gap-12 lg:grid-cols-[1.2fr_1fr_1fr_1.1fr]">
-          <div>
-            <Link href="/" aria-label={siteConfig.name} className="inline-flex">
+          <div className="text-center lg:text-left">
+            <Link href="/" aria-label={siteConfig.name} className="inline-flex justify-center lg:justify-start">
               <span
                 className="relative flex h-16 items-center"
                 style={{
@@ -23,7 +23,7 @@ export function Footer() {
                 <BrandLogo alt="" />
               </span>
             </Link>
-            <p className="mt-4 max-w-sm text-sm leading-relaxed text-muted">
+            <p className="mx-auto mt-4 max-w-sm text-sm leading-relaxed text-muted lg:mx-0">
               A trusted medical billing company and revenue cycle management
               partner helping healthcare providers increase collections, reduce
               denials, and run more efficient practices.
@@ -31,14 +31,14 @@ export function Footer() {
             <div className="mt-6 space-y-3 text-sm text-muted">
               <a
                 href={`tel:${siteConfig.phoneTel}`}
-                className="flex items-center gap-2 transition-colors hover:text-primary"
+                className="flex items-center justify-center gap-2 transition-colors hover:text-primary lg:justify-start"
               >
                 <Phone className="h-4 w-4 text-secondary" aria-hidden="true" />
                 {siteConfig.phone}
               </a>
               <a
                 href={`mailto:${siteConfig.email}`}
-                className="flex items-center gap-2 transition-colors hover:text-primary"
+                className="flex items-center justify-center gap-2 transition-colors hover:text-primary lg:justify-start"
               >
                 <Mail className="h-4 w-4 text-secondary" aria-hidden="true" />
                 {siteConfig.email}
@@ -47,7 +47,7 @@ export function Footer() {
                 href={siteConfig.mapsUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-start gap-2 transition-colors hover:text-primary"
+                className="flex items-start justify-center gap-2 text-left transition-colors hover:text-primary lg:justify-start"
               >
                 <MapPin
                   className="mt-0.5 h-4 w-4 shrink-0 text-secondary"
@@ -63,7 +63,7 @@ export function Footer() {
             </div>
           </div>
 
-          <div>
+          <div className="text-center lg:text-left">
             <h3 className="text-sm font-semibold uppercase tracking-[0.14em] text-foreground">
               Company
             </h3>
@@ -81,7 +81,7 @@ export function Footer() {
             </ul>
           </div>
 
-          <div>
+          <div className="text-center lg:text-left">
             <h3 className="text-sm font-semibold uppercase tracking-[0.14em] text-foreground">
               Services
             </h3>
@@ -115,7 +115,7 @@ export function Footer() {
             </ul>
           </div>
 
-          <div>
+          <div className="text-center lg:text-left">
             <h3 className="text-sm font-semibold uppercase tracking-[0.14em] text-foreground">
               Newsletter
             </h3>
@@ -129,7 +129,7 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-14 flex flex-col gap-3 border-t border-border pt-6 text-sm text-muted md:flex-row md:items-center md:justify-between">
+        <div className="mt-14 flex flex-col items-center gap-3 border-t border-border pt-6 text-center text-sm text-muted md:flex-row md:items-center md:justify-between md:text-left">
           <p>
             © {year} {siteConfig.name}. All rights reserved.
           </p>

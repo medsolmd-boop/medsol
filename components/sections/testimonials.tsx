@@ -78,13 +78,13 @@ export function Testimonials({
   return (
     <section className="py-12 md:py-16">
       <Container>
-        <div className="flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
+        <div className="flex flex-col items-center justify-between gap-6 text-center md:flex-row md:items-end md:text-left">
           <SectionTitle
             align="left"
             eyebrow="Testimonials"
             title="Trusted by Healthcare Providers"
             description="Practices choose us for medical billing services, credentialing, and virtual front desk support that deliver measurable results."
-            className="md:max-w-xl"
+            className="max-md:mx-auto max-md:text-center md:max-w-xl"
           />
           <div className="hidden md:flex">{navButtons}</div>
         </div>

@@ -10,7 +10,7 @@ export const photoHeroSectionClassName =
 
 /** Locked band height (Virtual Front Desk reference) so every page matches. */
 export const photoHeroBandClassName =
-  "relative isolate flex min-h-[32rem] items-center overflow-hidden md:h-[38rem] md:min-h-[38rem]";
+  "relative isolate flex min-h-[26rem] items-center overflow-hidden sm:min-h-[30rem] lg:h-[38rem] lg:min-h-[38rem]";
 
 export const photoHeroContentClassName =
   "relative z-[2] w-full py-12 md:py-14 lg:py-16";
@@ -40,9 +40,9 @@ export function PhotoHeroShell({
   return (
     <section className={photoHeroSectionClassName}>
       {breadcrumb ? (
-        <Container className="relative z-[2] mb-4">
+        <Container className="relative z-[2] mb-4 text-center lg:text-left">
           <nav aria-label="Breadcrumb">
-            <ol className="inline-flex flex-wrap items-center gap-1.5 text-sm text-muted">
+            <ol className="inline-flex w-full flex-wrap items-center justify-center gap-1.5 text-sm text-muted lg:justify-start">
               <li>
                 <Link href="/" className="transition-colors hover:text-primary">
                   Home

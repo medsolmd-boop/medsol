@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
+import { createPortal } from "react-dom";
 import { ChevronDown, Menu, X } from "lucide-react";
 import { navLinks, servicesMenuLinks, siteConfig } from "@/lib/site-config";
 import { cn } from "@/lib/utils";
@@ -86,29 +87,26 @@ export function Navbar() {
       const desktop = desktopRef.current;
       const menuOpen = openRef.current;
       const p = progress;
+      const mobileSheet = !desktop && menuOpen;
 
-      const padX = desktop ? p * 20 : p * 12;
-      const padY = desktop ? p * 14 : p * 10;
-      const maxWidth = desktop
-        ? 100 - p * 16
-        : menuOpen
-          ? 100 - p * 4
+      const padX = mobileSheet ? 0 : desktop ? p * 20 : p * 12;
+      const padY = mobileSheet ? 0 : desktop ? p * 14 : p * 10;
+      const maxWidth = mobileSheet
+        ? 100
+        : desktop
+          ? 100 - p * 16
           : 100 - p * 8;
 
       let radius = 0;
-      if (p > 0.01) {
-        if (!desktop && menuOpen) {
-          radius = 22;
-        } else {
-          radius = Math.pow(p, 0.85) * 48;
-        }
+      if (!mobileSheet && p > 0.01) {
+        radius = Math.pow(p, 0.85) * 48;
       }
 
       const barHeight = 68 - p * (desktop ? 8 : 6);
       const logoHeight = 40 - p * 4;
       const ctaHeight = 36 - p * 4;
       const ctaPadX = 22 - p * 4;
-      const showGlass = p > 0.02 || menuOpen;
+      const showGlass = !mobileSheet && p > 0.02;
 
       header.style.paddingLeft = `${padX}px`;
       header.style.paddingRight = `${padX}px`;
@@ -116,18 +114,24 @@ export function Navbar() {
 
       shell.style.maxWidth = `${maxWidth}%`;
       shell.style.borderRadius = `${radius}px`;
-      shell.style.paddingLeft = `${p * (desktop ? 10 : 6)}px`;
-      shell.style.paddingRight = `${p * (desktop ? 10 : 6)}px`;
+      shell.style.paddingLeft = mobileSheet ? "0px" : `${p * (desktop ? 10 : 6)}px`;
+      shell.style.paddingRight = mobileSheet ? "0px" : `${p * (desktop ? 10 : 6)}px`;
       shell.style.overflow = servicesOpen && desktop ? "visible" : "hidden";
-      shell.style.boxShadow = showGlass
-        ? `0 ${10 + p * 8}px ${28 + p * 14}px rgba(10,21,64,${0.06 + p * 0.08})`
-        : "none";
-      shell.style.borderColor = showGlass
-        ? `rgba(255,255,255,${0.55 + p * 0.2})`
-        : "transparent";
-      shell.style.background = showGlass
-        ? `radial-gradient(120% 90% at 0% 0%, rgba(48,101,212,${0.14 + p * 0.05}), transparent 54%), radial-gradient(90% 80% at 100% 100%, rgba(80,173,170,${0.11 + p * 0.04}), transparent 50%), linear-gradient(165deg, rgba(255,255,255,${0.7 + p * 0.12}), rgba(232,244,251,${0.64 + p * 0.12}))`
-        : "transparent";
+      shell.style.boxShadow = mobileSheet
+        ? "none"
+        : showGlass
+          ? `0 ${10 + p * 8}px ${28 + p * 14}px rgba(10,21,64,${0.06 + p * 0.08})`
+          : "none";
+      shell.style.borderColor = mobileSheet
+        ? "transparent"
+        : showGlass
+          ? `rgba(255,255,255,${0.55 + p * 0.2})`
+          : "transparent";
+      shell.style.background = mobileSheet
+        ? "#f7f8fb"
+        : showGlass
+          ? `radial-gradient(120% 90% at 0% 0%, rgba(48,101,212,${0.14 + p * 0.05}), transparent 54%), radial-gradient(90% 80% at 100% 100%, rgba(80,173,170,${0.11 + p * 0.04}), transparent 50%), linear-gradient(165deg, rgba(255,255,255,${0.7 + p * 0.12}), rgba(232,244,251,${0.64 + p * 0.12}))`
+          : "transparent";
 
       if (lastGlass !== showGlass) {
         lastGlass = showGlass;
@@ -261,13 +265,16 @@ export function Navbar() {
   return (
     <header
       ref={headerRef}
-      className="pointer-events-none fixed inset-x-0 top-[var(--topbar-height)] z-50 nav-enter"
+      className={cn(
+        "pointer-events-none fixed inset-x-0 top-[var(--topbar-height)] nav-enter",
+        open && !isDesktop ? "z-[70]" : "z-50"
+      )}
       style={{ paddingLeft: 0, paddingRight: 0, paddingTop: 0 }}
     >
       <div
         ref={shellRef}
         className={cn(
-          "pointer-events-auto mx-auto w-full border will-change-[max-width,border-radius,transform,opacity]",
+          "pointer-events-auto relative z-10 mx-auto w-full border will-change-[max-width,border-radius,transform,opacity]",
           elevated || open ? "border-white/70" : "border-transparent"
         )}
         style={{
@@ -416,19 +423,16 @@ export function Navbar() {
             {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
           </button>
         </Container>
+      </div>
 
+      {open && !isDesktop && typeof document !== "undefined"
+        ? createPortal(
         <div
-          className={cn(
-            "grid lg:hidden",
-            "transition-[grid-template-rows,opacity] duration-300 ease-[cubic-bezier(0.22,1,0.36,1)]",
-            open ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
-          )}
+          data-lenis-prevent
+          className="pointer-events-auto fixed inset-x-0 bottom-0 z-[60] overflow-y-auto overscroll-contain bg-[#f7f8fb] px-4 pb-8 pt-[var(--navbar-height)]"
+          style={{ top: "var(--topbar-height)" }}
         >
-          <div className="overflow-hidden">
-            <div
-              data-lenis-prevent
-              className="max-h-[min(70vh,520px)] overflow-y-auto overscroll-contain border-t border-primary/10 px-3 py-3"
-            >
+            <div className="border-t border-primary/10 py-3">
               <nav className="flex flex-col gap-1" aria-label="Mobile navigation">
                 {linksBeforeServices.map((link) => {
                   const active =
@@ -522,15 +526,19 @@ export function Navbar() {
                   );
                 })}
               </nav>
-              <Button asChild className="mt-3 w-full rounded-full">
+              <Button
+                asChild
+                className="mt-3 h-auto min-h-12 w-full whitespace-normal rounded-full px-5 py-3 text-center leading-snug"
+              >
                 <Link href="/contact" onClick={() => setOpen(false)}>
                   Contact Us
                 </Link>
               </Button>
             </div>
-          </div>
-        </div>
-      </div>
+          </div>,
+          document.body
+        )
+        : null}
     </header>
   );
 }

@@ -26,7 +26,7 @@ export function CalculatorPromo({
               className="pointer-events-none absolute -bottom-12 left-8 h-40 w-40 rounded-full bg-secondary/10 blur-3xl"
               aria-hidden="true"
             />
-            <div className="relative z-[1] grid items-center gap-8 lg:grid-cols-[auto_1fr_auto]">
+            <div className="relative z-[1] grid items-center justify-items-center gap-8 text-center lg:grid-cols-[auto_1fr_auto] lg:justify-items-stretch lg:text-left">
               <span className="flex h-16 w-16 items-center justify-center rounded-[1.25rem] bg-primary text-white shadow-[0_12px_28px_rgba(10,21,64,0.25)]">
                 <Calculator className="h-7 w-7" aria-hidden="true" />
               </span>
@@ -34,14 +34,14 @@ export function CalculatorPromo({
                 <p className="text-sm font-semibold uppercase tracking-[0.16em] text-secondary">
                   Free Tool
                 </p>
-                <h2 className="mt-2 text-2xl font-bold tracking-tight text-foreground md:text-3xl">
+                <h2 className="mt-2 text-balance text-2xl font-bold tracking-tight text-foreground md:text-3xl">
                   {title}
                 </h2>
-                <p className="mt-3 max-w-2xl text-sm leading-relaxed text-muted md:text-base">
+                <p className="mx-auto mt-3 max-w-2xl text-sm leading-relaxed text-muted md:text-base lg:mx-0">
                   {description}
                 </p>
               </div>
-              <Button asChild size="lg" className="w-full lg:w-auto">
+              <Button asChild size="lg" className="h-auto min-h-12 w-full whitespace-normal px-5 py-3 text-center leading-snug lg:w-auto">
                 <Link href="/tools/revenue-leakage-calculator">
                   Try the Calculator
                   <ArrowRight className="h-4 w-4" aria-hidden="true" />

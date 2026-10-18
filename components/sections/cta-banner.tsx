@@ -30,19 +30,19 @@ export function CtaBanner({
               className="pointer-events-none absolute -bottom-24 left-0 h-64 w-64 rounded-full bg-secondary/20 blur-3xl"
               aria-hidden="true"
             />
-            <div className="relative z-[2] grid items-center gap-8 lg:grid-cols-[1.4fr_auto]">
+            <div className="relative z-[2] grid items-center gap-8 text-center lg:grid-cols-[1.4fr_auto] lg:text-left">
               <div>
-                <h2 className="max-w-2xl text-balance text-3xl font-bold tracking-tight md:text-4xl">
+                <h2 className="mx-auto max-w-2xl text-balance text-3xl font-bold tracking-tight md:text-4xl lg:mx-0">
                   {title}
                 </h2>
-                <p className="mt-4 max-w-2xl text-base leading-relaxed text-white/80 md:text-lg">
+                <p className="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-white/80 md:text-lg lg:mx-0">
                   {description}
                 </p>
               </div>
               <Button
                 asChild
                 size="lg"
-                className="bg-[#fcfcfd] text-primary shadow-[0_10px_28px_rgba(0,0,0,0.12)] hover:bg-white"
+                className="mx-auto h-auto min-h-12 w-full whitespace-normal bg-[#fcfcfd] px-5 py-3 text-center leading-snug text-primary shadow-[0_10px_28px_rgba(0,0,0,0.12)] hover:bg-white sm:w-auto lg:mx-0"
               >
                 <Link href={href}>
                   {cta}

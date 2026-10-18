@@ -50,7 +50,7 @@ export function HeroStatsOverlay({ children, stats }: HeroStatsOverlayProps) {
       </div>
 
       {/* Desktop: neat floating cards around the frame, never stacked on each other */}
-      <div className="pointer-events-none absolute inset-0 hidden md:block">
+      <div className="pointer-events-none absolute inset-0 hidden lg:block">
         <StatCard
           stat={one}
           className="pointer-events-auto absolute -top-4 right-3 w-[150px] lg:-top-5 lg:right-0"
@@ -68,13 +68,13 @@ export function HeroStatsOverlay({ children, stats }: HeroStatsOverlayProps) {
       </div>
 
       {/* Mobile + tablet fallback: clean equal pills under the art */}
-      <div className="mt-5 grid grid-cols-3 gap-2 md:mt-8 md:hidden">
+      <div className="mt-5 grid grid-cols-1 gap-2 min-[480px]:grid-cols-3 lg:hidden">
         {all.map((stat) => (
           <div
             key={stat.label}
-            className="glass rounded-2xl px-2 py-3 text-center"
+            className="glass min-w-0 rounded-2xl px-3 py-3 text-center"
           >
-            <p className="text-[9px] font-semibold uppercase tracking-[0.1em] text-muted">
+            <p className="text-balance text-[11px] font-semibold uppercase leading-snug tracking-wide text-muted">
               {stat.label}
             </p>
             <p
@@ -87,7 +87,7 @@ export function HeroStatsOverlay({ children, stats }: HeroStatsOverlayProps) {
       </div>
 
       {/* Desktop spacer so bottom floating card doesn't collide with next section */}
-      <div className="hidden h-6 md:block" aria-hidden="true" />
+      <div className="hidden h-6 lg:block" aria-hidden="true" />
     </div>
   );
 }

@@ -16,6 +16,10 @@ export type AccordionGalleryItem = {
   label?: string;
   description?: string;
   alt?: string;
+  /** CSS object-position, so a tall photo keeps its subject when the panel opens. */
+  objectPosition?: string;
+  /** Scale while this panel is open. Defaults to a slight zoom. */
+  zoom?: number;
 };
 
 type AccordionGalleryProps = {
@@ -185,7 +189,7 @@ export function AccordionGallery({
             gsap.set(media, {
               x: 0,
               y: 0,
-              scale: isActive ? 1.04 : 1,
+              scale: isActive ? (items[i]?.zoom ?? 1.04) : 1,
               "--ag-gray": gray,
               "--ag-dim": dim,
             });
@@ -197,7 +201,7 @@ export function AccordionGallery({
               {
                 x: isActive ? 0 : shift,
                 y: 0,
-                scale: isActive ? 1.06 : 1.02,
+                scale: isActive ? (items[i]?.zoom ?? 1.06) : 1,
                 "--ag-gray": gray,
                 "--ag-dim": dim,
                 duration: dur,
@@ -359,6 +363,11 @@ export function AccordionGallery({
                     draggable={false}
                     loading="lazy"
                     decoding="async"
+                    style={
+                      item.objectPosition
+                        ? { objectPosition: item.objectPosition }
+                        : undefined
+                    }
                   />
                 </span>
                 <span className="ag-panel__overlay" aria-hidden="true" />

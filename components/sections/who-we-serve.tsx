@@ -13,6 +13,8 @@ const audienceItems = [
     description:
       "Billing and credentialing for solo and small practices, without adding staff.",
     alt: "Independent physician reviewing a patient chart",
+    objectPosition: "center top",
+    zoom: 1,
   },
   {
     image: "/serve-lab.jpg",

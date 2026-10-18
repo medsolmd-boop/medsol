@@ -71,7 +71,6 @@ export const siteConfig = {
     freeAssessment: "Schedule a Free Revenue Cycle Assessment",
     billingAnalysis: "Get a Free Billing & Collections Analysis",
     credentialing: "Start Your Credentialing Application Today",
-    mips: "Get a Free MIPS Consultation",
     frontDesk: "Talk to Us About Front Desk Support",
     consultation: "Schedule a Free Consultation",
     discovery: "Book a Discovery Call",

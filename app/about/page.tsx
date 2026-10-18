@@ -17,7 +17,6 @@ import { FadeIn, Stagger, StaggerItem } from "@/components/motion/fade-in";
 import {
   Award,
   BadgeCheck,
-  ClipboardList,
   Eye,
   FileText,
   Globe,
@@ -32,7 +31,6 @@ const teamIcons: Record<string, LucideIcon> = {
   "Revenue Cycle Leadership": FileText,
   "Credentialing Specialists": BadgeCheck,
   "Virtual Front Desk Team": Headset,
-  "MIPS Specialists": ClipboardList,
   "Webpage Development Team": Globe,
   "Social Media & SEO Team": Megaphone,
 };

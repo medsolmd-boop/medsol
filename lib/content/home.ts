@@ -37,13 +37,6 @@ export const homeContent = {
       icon: "BadgeCheck",
     },
     {
-      title: "MIPS Services",
-      href: "/mips",
-      description:
-        "Measure selection, year-round tracking, and Quality Payment Program submission support that helps protect your Medicare reimbursement.",
-      icon: "ClipboardList",
-    },
-    {
       title: "Virtual Front Desk Services",
       href: "/virtual-front-desk",
       description:

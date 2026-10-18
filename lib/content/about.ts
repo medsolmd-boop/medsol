@@ -97,12 +97,6 @@ export const aboutContent = {
         "Trained healthcare support professionals who protect first impressions while keeping schedules and intake accurate.",
     },
     {
-      name: "MIPS Specialists",
-      role: "Quality Payment Program",
-      description:
-        "MIPS analysts who select measures, track performance year-round, and submit Quality Payment Program data so Medicare reimbursement stays protected.",
-    },
-    {
       name: "Webpage Development Team",
       role: "Practice Websites",
       description:

@@ -2,7 +2,6 @@ import Link from "next/link";
 import {
   ArrowRight,
   BadgeCheck,
-  ClipboardList,
   FileText,
   Globe,
   Headset,
@@ -17,7 +16,6 @@ import { Stagger, StaggerItem } from "@/components/motion/fade-in";
 const icons: Record<string, LucideIcon> = {
   FileText,
   BadgeCheck,
-  ClipboardList,
   Headset,
   Megaphone,
   Globe,
@@ -37,8 +35,6 @@ const iconStyles: Record<string, string> = {
     "bg-gradient-to-br from-spark to-[#e0a21a] text-white shadow-[0_12px_28px_rgba(243,193,75,0.38)]",
   Search:
     "bg-gradient-to-br from-[#ff7a59] to-[#f06292] text-white shadow-[0_12px_28px_rgba(255,122,89,0.32)]",
-  ClipboardList:
-    "bg-gradient-to-br from-[#0ea5e9] to-[#2563eb] text-white shadow-[0_12px_28px_rgba(14,165,233,0.32)]",
 };
 
 const fallbackIconStyle =

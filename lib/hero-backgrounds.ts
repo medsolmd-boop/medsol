@@ -14,10 +14,6 @@ export const heroBackgrounds = {
     src: "https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=2400&q=80",
     alt: "Quiet office interior for provider credentialing and enrollment work",
   },
-  mips: {
-    src: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&w=2400&q=80",
-    alt: "Focused workstation for quality reporting and MIPS support",
-  },
   "virtual-front-desk": {
     src: "https://images.unsplash.com/photo-1560264418-c4445382edbc?auto=format&fit=crop&w=2400&q=80",
     alt: "Virtual front desk specialist with headset supporting practice callers",

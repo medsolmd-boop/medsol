@@ -28,11 +28,11 @@ export const pageGuides: PageGuide[] = [
       "Provider credentialing services streamline payer enrollment with Medicare, Medicaid, and commercial insurers, plus CAQH management, NPI updates, recredentialing, and ongoing compliance follow-up.",
   },
   {
-    id: "mips",
-    label: "MIPS",
-    href: "/mips",
+    id: "seo-services",
+    label: "SEO Services",
+    href: "/seo-services",
     summary:
-      "MIPS services support Merit-based Incentive Payment System reporting with measure selection, performance tracking, Promoting Interoperability guidance, Improvement Activities, and on-time data submission.",
+      "SEO services improve local and specialty search visibility so patients can find your practice online more easily.",
   },
   {
     id: "virtual-front-desk",
@@ -54,13 +54,6 @@ export const pageGuides: PageGuide[] = [
     href: "/social-media-marketing",
     summary:
       "Social media marketing keeps your practice visible with healthcare-appropriate content, planning, and consistent brand presence.",
-  },
-  {
-    id: "seo-services",
-    label: "SEO Services",
-    href: "/seo-services",
-    summary:
-      "SEO services improve local and specialty search visibility so patients can find your practice online more easily.",
   },
   {
     id: "calculator",

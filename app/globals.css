@@ -74,6 +74,7 @@
 
 html {
   scroll-behavior: auto;
+  scroll-padding-top: calc(var(--topbar-height) + var(--navbar-height) + 1rem);
 }
 
 body {

@@ -19,10 +19,23 @@ function setScroll(y: number, resize = false) {
   const lenis = getLenis();
   if (lenis) {
     if (resize) lenis.resize();
-    lenis.scrollTo(y, { immediate: true });
+    lenis.scrollTo(y, { immediate: true, force: true });
     return;
   }
   window.scrollTo({ top: y, left: 0, behavior: "auto" });
+}
+
+let pendingScroll: number | null = null;
+
+/** Applied once the outgoing page has faded, so the jump is not visible. */
+export function queuePageScroll(y: number) {
+  pendingScroll = y;
+}
+
+export function consumePageScroll() {
+  const y = pendingScroll;
+  pendingScroll = null;
+  return y;
 }
 
 function readStore(): Record<string, number> {
@@ -64,6 +77,7 @@ export function NavigationEffects() {
   const isPopNavigation = useRef(false);
   const ignoreScrollSave = useRef(false);
   const lastSavedY = useRef(0);
+  const hasMounted = useRef(false);
 
   useEffect(() => {
     pathnameRef.current = pathname;
@@ -152,12 +166,15 @@ export function NavigationEffects() {
     const targetY = shouldRestore ? loadPosition(pathname) : 0;
 
     ignoreScrollSave.current = true;
-    setScroll(targetY, true);
-
-    // One delayed resync after paint (images/fonts) — avoid multi-jump thrash
-    const resync = window.setTimeout(() => {
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (!hasMounted.current || reduceMotion) {
+      hasMounted.current = true;
       setScroll(targetY, true);
-    }, shouldRestore ? 160 : 60);
+    } else {
+      queuePageScroll(targetY);
+      document.documentElement.classList.add("is-page-transitioning");
+      getLenis()?.stop();
+    }
 
     const unlock = window.setTimeout(() => {
       ignoreScrollSave.current = false;
@@ -165,10 +182,9 @@ export function NavigationEffects() {
       if (shouldRestore) {
         savePosition(pathname, targetY);
       }
-    }, shouldRestore ? 220 : 100);
+    }, 700);
 
     return () => {
-      window.clearTimeout(resync);
       window.clearTimeout(unlock);
     };
   }, [pathname]);

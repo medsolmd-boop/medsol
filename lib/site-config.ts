@@ -88,7 +88,6 @@ export const navLinks = [
   { href: "/", label: "Home", short: "Home" },
   { href: "/medical-billing", label: "Medical Billing", short: "Billing" },
   { href: "/credentialing", label: "Credentialing", short: "Credentialing" },
-  { href: "/mips", label: "MIPS", short: "MIPS" },
   {
     href: "/virtual-front-desk",
     label: "Virtual Front Desk",
@@ -134,9 +133,9 @@ export const serviceLinks = [
     short: "Credentialing",
   },
   {
-    href: "/mips",
-    title: "MIPS Services",
-    short: "MIPS",
+    href: "/seo-services",
+    title: "SEO Services",
+    short: "SEO Services",
   },
   {
     href: "/virtual-front-desk",
@@ -152,10 +151,5 @@ export const serviceLinks = [
     href: "/social-media-marketing",
     title: "Social Media Marketing",
     short: "Social Media Marketing",
-  },
-  {
-    href: "/seo-services",
-    title: "SEO Services",
-    short: "SEO Services",
   },
 ] as const;

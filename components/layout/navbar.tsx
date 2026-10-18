@@ -53,7 +53,7 @@ export function Navbar() {
   }, [open]);
 
   useEffect(() => {
-    const media = window.matchMedia("(min-width: 1024px)");
+    const media = window.matchMedia("(min-width: 1280px)");
     const sync = () => {
       desktopRef.current = media.matches;
       setIsDesktop(media.matches);
@@ -286,7 +286,7 @@ export function Navbar() {
         <Container
           ref={rowRef}
           className={cn(
-            "grid grid-cols-[1fr_auto] items-center gap-3 lg:grid-cols-[auto_minmax(0,1fr)_auto] lg:gap-x-6",
+            "grid grid-cols-[1fr_auto] items-center gap-3 xl:grid-cols-[auto_minmax(0,1fr)_auto] xl:gap-x-6",
             pill && "max-w-none !px-2 md:!px-3"
           )}
           style={{ height: 68 }}
@@ -309,7 +309,7 @@ export function Navbar() {
           </Link>
 
           <nav
-            className="hidden items-center justify-center gap-0.5 justify-self-center lg:flex lg:pl-4"
+            className="hidden items-center justify-center gap-0.5 justify-self-center xl:flex xl:pl-4"
             aria-label="Primary navigation"
           >
             {linksBeforeServices.map((link) => {
@@ -396,7 +396,7 @@ export function Navbar() {
             })}
           </nav>
 
-          <div className="hidden items-center justify-self-end lg:flex">
+          <div className="hidden items-center justify-self-end xl:flex">
             <Button asChild className="rounded-full">
               <Link
                 ref={ctaRef}
@@ -411,7 +411,7 @@ export function Navbar() {
           <button
             type="button"
             className={cn(
-              "inline-flex h-11 w-11 items-center justify-center justify-self-end text-primary transition-colors lg:hidden",
+              "inline-flex h-11 w-11 items-center justify-center justify-self-end text-primary transition-colors xl:hidden",
               open || elevated
                 ? "rounded-full bg-primary/5"
                 : "glass rounded-xl"

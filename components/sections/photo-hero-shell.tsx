@@ -10,7 +10,7 @@ export const photoHeroSectionClassName =
 
 /** Locked band height (Virtual Front Desk reference) so every page matches. */
 export const photoHeroBandClassName =
-  "relative isolate flex min-h-[26rem] items-center overflow-hidden sm:min-h-[30rem] lg:h-[38rem] lg:min-h-[38rem]";
+  "relative isolate flex min-h-[26rem] items-center overflow-hidden sm:min-h-[30rem] lg:min-h-[38rem]";
 
 export const photoHeroContentClassName =
   "relative z-[2] w-full py-12 md:py-14 lg:py-16";

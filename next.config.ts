@@ -16,6 +16,11 @@ const nextConfig: NextConfig = {
         destination: "/webpage-development",
         permanent: true,
       },
+      {
+        source: "/mips",
+        destination: "/seo-services",
+        permanent: true,
+      },
     ];
   },
 };

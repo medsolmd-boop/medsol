@@ -30,11 +30,10 @@ export const contactContent = {
   services: [
     "Medical Billing Services",
     "Credentialing Services",
-    "MIPS Services",
+    "SEO Services",
     "Virtual Front Desk Services",
     "Webpage Development",
     "Social Media Marketing",
-    "SEO Services",
     "Full Revenue Cycle Assessment",
     "Other / Not Sure",
   ],

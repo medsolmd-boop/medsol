@@ -10,6 +10,7 @@ import {
 import { usePathname } from "next/navigation";
 import type Lenis from "lenis";
 import { easeOutSoft } from "@/lib/motion";
+import { consumePageScroll } from "@/components/providers/navigation-effects";
 
 type NavMeta = {
   path: string;
@@ -24,7 +25,7 @@ function getLenis() {
 const variants: Variants = {
   enter: {
     opacity: 0,
-    y: 14,
+    y: 10,
   },
   center: {
     opacity: 1,
@@ -32,15 +33,13 @@ const variants: Variants = {
   },
   exit: {
     opacity: 0,
-    y: -8,
-    transition: { duration: 0.22, ease: easeOutSoft },
+    transition: { duration: 0.18, ease: easeOutSoft },
   },
 };
 
 /**
- * Lightweight fade/slide — avoids dual-page x-transforms that stutter.
- * Forward/back still tracked for future use; motion stays direction-agnostic
- * so paint cost stays low on route changes.
+ * Fade the current page out where it is, then reveal the next one.
+ * Scroll resets while the outgoing page is already invisible.
  */
 export function PageTransition({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
@@ -87,19 +86,19 @@ export function PageTransition({ children }: { children: React.ReactNode }) {
   }
 
   return (
-    <div className="relative overflow-x-clip">
+    <div className="relative">
       <AnimatePresence mode="wait" initial={false}>
         <motion.div
           key={pathname}
+          data-page-panel={pathname}
           variants={variants}
           initial="enter"
           animate="center"
           exit="exit"
-          transition={{ duration: 0.36, ease: easeOutSoft }}
+          transition={{ duration: 0.42, ease: easeOutSoft }}
           className="relative w-full bg-transparent"
           style={{
             backfaceVisibility: "hidden",
-            transform: "translateZ(0)",
           }}
           onAnimationStart={(definition) => {
             if (definition === "exit" || definition === "enter") {
@@ -110,6 +109,20 @@ export function PageTransition({ children }: { children: React.ReactNode }) {
             }
           }}
           onAnimationComplete={(definition) => {
+            if (definition === "exit") {
+              const y = consumePageScroll();
+              if (y != null) {
+                const lenis = getLenis();
+                if (lenis) {
+                  lenis.start();
+                  lenis.scrollTo(y, { immediate: true, force: true });
+                  lenis.stop();
+                } else {
+                  window.scrollTo({ top: y, left: 0, behavior: "auto" });
+                }
+              }
+              return;
+            }
             if (definition !== "center") return;
             document.documentElement.classList.remove("is-page-transitioning");
             const lenis = getLenis();

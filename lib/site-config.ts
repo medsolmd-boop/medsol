@@ -5,9 +5,9 @@ export const siteConfig = {
   description:
     "Full-service medical billing, credentialing, and virtual front desk support for healthcare providers. Increase collections, reduce denials, and get paid faster.",
   url: "https://www.example.com",
-  phone: "+1 (410) 690-0823",
+  phone: "+1 (667) 408-9192",
   /** E.164 number for tel: links and structured data */
-  phoneTel: "+14106900823",
+  phoneTel: "+16674089192",
   email: "info@medsolmd.com",
   address: {
     street: "10490 Little Patuxent Pkwy #600",

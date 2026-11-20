@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Mail, MapPin, Phone } from "lucide-react";
+import { Mail, MapPin, Phone, Printer } from "lucide-react";
 import { navLinks, serviceLinks, siteConfig } from "@/lib/site-config";
 import { Container } from "@/components/ui/container";
 import { NewsletterForm } from "@/components/sections/newsletter-form";
@@ -29,13 +29,20 @@ export function Footer() {
               denials, and run more efficient practices.
             </p>
             <div className="mt-6 space-y-3 text-sm text-muted">
-              <a
-                href={`tel:${siteConfig.phoneTel}`}
-                className="flex items-center justify-center gap-2 transition-colors hover:text-primary lg:justify-start"
-              >
-                <Phone className="h-4 w-4 text-secondary" aria-hidden="true" />
-                {siteConfig.phone}
-              </a>
+              {siteConfig.phones.map((phone) => (
+                <a
+                  key={phone.tel}
+                  href={`tel:${phone.tel}`}
+                  className="flex items-center justify-center gap-2 transition-colors hover:text-primary lg:justify-start"
+                >
+                  <Phone className="h-4 w-4 text-secondary" aria-hidden="true" />
+                  Phone: {phone.display}
+                </a>
+              ))}
+              <p className="flex items-center justify-center gap-2 lg:justify-start">
+                <Printer className="h-4 w-4 text-secondary" aria-hidden="true" />
+                Fax: {siteConfig.fax.display}
+              </p>
               <a
                 href={`mailto:${siteConfig.email}`}
                 className="flex items-center justify-center gap-2 transition-colors hover:text-primary lg:justify-start"

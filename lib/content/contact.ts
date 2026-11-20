@@ -56,7 +56,7 @@ export const contactContent = {
   ],
   finalCta: {
     title: "Prefer to Talk Now?",
-    description: `Call ${siteConfig.phone} or email ${siteConfig.email}. We're ready to help with medical billing, credentialing, and virtual front desk support.`,
+    description: `Call ${siteConfig.phones.map((phone) => phone.display).join(" or ")}, fax ${siteConfig.fax.display}, or email ${siteConfig.email}. We're ready to help with medical billing, credentialing, and virtual front desk support.`,
     cta: siteConfig.cta.consultation,
   },
 } as const;

@@ -344,7 +344,7 @@ export const supportFaqs: SupportFaq[] = [
       "contact",
       "hear back",
     ],
-    answer: `Most inquiries receive a response within one business day. For the fastest path, schedule a free consultation on the Contact page or call ${siteConfig.phone}.`,
+    answer: `Most inquiries receive a response within one business day. For the fastest path, schedule a free consultation on the Contact page or call ${siteConfig.phones.map((phone) => phone.display).join(" or ")}.`,
   },
 ];
 
@@ -404,7 +404,8 @@ export function buildKnowledgeContext() {
 
   return `Company: ${siteConfig.name}
 Services: medical billing, provider credentialing, virtual front desk, webpage development, social media marketing, SEO
-Phone: ${siteConfig.phone}
+Phone: ${siteConfig.phones.map((phone) => phone.display).join(", ")}
+Fax: ${siteConfig.fax.display}
 Email: ${siteConfig.email}
 CTA: free consultation / free revenue cycle assessment
 

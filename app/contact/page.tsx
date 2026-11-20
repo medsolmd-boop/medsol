@@ -1,4 +1,4 @@
-import { Clock, Mail, MapPin, Phone } from "lucide-react";
+import { Clock, Mail, MapPin, Phone, Printer } from "lucide-react";
 import { contactContent } from "@/lib/content/contact";
 import { siteConfig } from "@/lib/site-config";
 import { buildMetadata } from "@/lib/seo";
@@ -85,19 +85,31 @@ export default function ContactPage() {
                     Contact Details
                   </h2>
                   <ul className="mt-5 space-y-4 text-sm text-muted">
+                    {siteConfig.phones.map((phone) => (
+                      <li key={phone.tel} className="flex items-start gap-3">
+                        <Phone
+                          className="mt-0.5 h-5 w-5 text-secondary"
+                          aria-hidden="true"
+                        />
+                        <div>
+                          <p className="font-semibold text-foreground">Phone</p>
+                          <a
+                            href={`tel:${phone.tel}`}
+                            className="transition hover:text-primary"
+                          >
+                            {phone.display}
+                          </a>
+                        </div>
+                      </li>
+                    ))}
                     <li className="flex items-start gap-3">
-                      <Phone
+                      <Printer
                         className="mt-0.5 h-5 w-5 text-secondary"
                         aria-hidden="true"
                       />
                       <div>
-                        <p className="font-semibold text-foreground">Phone</p>
-                        <a
-                          href={`tel:${siteConfig.phoneTel}`}
-                          className="transition hover:text-primary"
-                        >
-                          {contactContent.details.phone}
-                        </a>
+                        <p className="font-semibold text-foreground">Fax</p>
+                        <p>{siteConfig.fax.display}</p>
                       </div>
                     </li>
                     <li className="flex items-start gap-3">

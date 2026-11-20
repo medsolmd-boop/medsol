@@ -17,7 +17,12 @@ export function organizationSchema() {
     url: absoluteUrl("/"),
     logo: absoluteUrl("/logo.png"),
     email: siteConfig.email,
-    ...(phone ? { telephone: siteConfig.phoneTel } : {}),
+    ...(phone
+      ? {
+          telephone: siteConfig.phones.map((item) => item.tel),
+          faxNumber: siteConfig.fax.tel,
+        }
+      : {}),
     address: {
       "@type": "PostalAddress",
       streetAddress: siteConfig.address.street,
@@ -46,7 +51,12 @@ export function healthcareBusinessSchema() {
     name: siteConfig.name,
     description: siteConfig.description,
     url: absoluteUrl("/"),
-    ...(phone ? { telephone: siteConfig.phoneTel } : {}),
+    ...(phone
+      ? {
+          telephone: siteConfig.phones.map((item) => item.tel),
+          faxNumber: siteConfig.fax.tel,
+        }
+      : {}),
     email: siteConfig.email,
     image: absoluteUrl("/og-image.png"),
     address: {
@@ -84,7 +94,10 @@ export function contactPageSchema() {
       name: siteConfig.name,
       email: siteConfig.email,
       ...(siteConfig.phone && !siteConfig.phone.includes("[")
-        ? { telephone: siteConfig.phoneTel }
+        ? {
+            telephone: siteConfig.phones.map((item) => item.tel),
+            faxNumber: siteConfig.fax.tel,
+          }
         : {}),
     },
   };

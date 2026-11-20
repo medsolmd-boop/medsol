@@ -5,9 +5,18 @@ export const siteConfig = {
   description:
     "Full-service medical billing, credentialing, and virtual front desk support for healthcare providers. Increase collections, reduce denials, and get paid faster.",
   url: "https://www.example.com",
-  phone: "+1 (667) 408-9192",
+  /** First number is the primary line used in short call-to-action copy. */
+  phone: "410 690 0823",
   /** E.164 number for tel: links and structured data */
-  phoneTel: "+16674089192",
+  phoneTel: "+14106900823",
+  phones: [
+    { display: "410 690 0823", tel: "+14106900823" },
+    { display: "667 408 9192", tel: "+16674089192" },
+  ],
+  fax: {
+    display: "667 408 9008",
+    tel: "+16674089008",
+  },
   email: "info@medsolmd.com",
   address: {
     street: "10490 Little Patuxent Pkwy #600",

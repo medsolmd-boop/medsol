@@ -14,7 +14,7 @@
   --muted: #5f6b7a;
   --border: rgba(10, 21, 64, 0.1);
   --radius: 1.35rem;
-  --topbar-height: 4.5rem;
+  --topbar-height: 7.25rem;
   --navbar-height: 4.25rem;
   --shadow-soft:
     0 1px 0 rgba(255, 255, 255, 0.7),
@@ -60,15 +60,15 @@
   border-color: var(--border);
 }
 
-@media (min-width: 420px) {
+@media (min-width: 640px) {
   :root {
-    --topbar-height: 3.35rem;
+    --topbar-height: 4.25rem;
   }
 }
 
-@media (min-width: 640px) {
+@media (min-width: 1280px) {
   :root {
-    --topbar-height: 2.25rem;
+    --topbar-height: 2.75rem;
   }
 }
 
